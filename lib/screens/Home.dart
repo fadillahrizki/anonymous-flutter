@@ -1,3 +1,4 @@
+import 'package:anonymous/utils/Constants.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -8,41 +9,41 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
-        backgroundColor: Colors.black87,
+        backgroundColor: CustomColor().primary,
       ),
       drawer: Drawer(
         child: ListView(
           children: [
-            const UserAccountsDrawerHeader(
-              accountName: Text('Contoh User Panjang'),
-              accountEmail: Text('contoh.user.panjang@gmail.com'),
+            UserAccountsDrawerHeader(
+              accountName: const Text('Contoh User Panjang'),
+              accountEmail: const Text('contoh.user.panjang@gmail.com'),
               decoration: BoxDecoration(
-                color: Colors.black87,
+                color: CustomColor().primary,
               ),
             ),
             ListTile(
               title: const Text('Home'),
               selected: true,
               selectedColor: Colors.white,
-              selectedTileColor: Colors.black87,
+              selectedTileColor: CustomColor().primary,
               onTap: () {},
             ),
             ListTile(
               title: const Text('Edit Profile'),
               selectedColor: Colors.white,
-              selectedTileColor: Colors.black87,
+              selectedTileColor: CustomColor().primary,
               onTap: () {},
             ),
             ListTile(
               title: const Text('Manajemen Kategori'),
               selectedColor: Colors.white,
-              selectedTileColor: Colors.black87,
+              selectedTileColor: CustomColor().primary,
               onTap: () {},
             ),
             ListTile(
               title: const Text('Manajemen Produk'),
               selectedColor: Colors.white,
-              selectedTileColor: Colors.black87,
+              selectedTileColor: CustomColor().primary,
               onTap: () {},
             ),
             ListTile(
@@ -60,12 +61,12 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(vertical: 50),
               child: Center(
                   child: Text(
                 'Anonymous',
-                style: TextStyle(fontSize: 24, color: Colors.black87),
+                style: TextStyle(fontSize: 24, color: CustomColor().primary),
               )),
             ),
             ElevatedButton(
@@ -74,7 +75,7 @@ class Home extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 24),
-                backgroundColor: Colors.black87,
+                backgroundColor: CustomColor().primary,
               ),
               child: const Center(child: Text('Edit Profile')),
             ),
@@ -85,7 +86,7 @@ class Home extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 24),
-                backgroundColor: Colors.black87,
+                backgroundColor: CustomColor().primary,
               ),
               child: const Center(child: Text('Manajemen Kategori')),
             ),
@@ -96,7 +97,7 @@ class Home extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 24),
-                backgroundColor: Colors.black87,
+                backgroundColor: CustomColor().primary,
               ),
               child: const Center(child: Text('Manajemen Produk')),
             ),
@@ -107,7 +108,7 @@ class Home extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 24),
-                backgroundColor: Colors.black87,
+                backgroundColor: CustomColor().primary,
               ),
               child: const Center(child: Text('Logout')),
             ),

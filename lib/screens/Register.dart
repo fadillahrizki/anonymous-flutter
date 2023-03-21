@@ -1,3 +1,5 @@
+import 'package:anonymous/components/CustomTextField.dart';
+import 'package:anonymous/utils/Constants.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatelessWidget {
@@ -6,59 +8,26 @@ class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.all(24),
+        color: CustomColor().background,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 50),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 50),
               child: Center(
                   child: Text(
                 'Anonymous',
-                style: TextStyle(fontSize: 24, color: Colors.black87),
+                style: TextStyle(fontSize: 24, color: CustomColor().primary),
               )),
             ),
-            const Text('Nama'),
+            const CustomTextField(label: 'Nama'),
             const SizedBox(height: 12),
-            const TextField(
-              cursorColor: Colors.black87,
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black87),
-                ),
-                border: OutlineInputBorder(),
-                hintText: 'Masukkan Nama...',
-              ),
-            ),
+            const CustomTextField(label: 'Username'),
             const SizedBox(height: 12),
-            const Text('Username'),
-            const SizedBox(height: 12),
-            const TextField(
-              cursorColor: Colors.black87,
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black87),
-                ),
-                border: OutlineInputBorder(),
-                hintText: 'Masukkan Username...',
-              ),
-            ),
-            const SizedBox(height: 12),
-            const Text('Password'),
-            const SizedBox(height: 12),
-            const TextField(
-              obscureText: true,
-              cursorColor: Colors.black87,
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black87),
-                ),
-                border: OutlineInputBorder(),
-                hintText: 'Masukkan Password...',
-              ),
-            ),
+            const CustomTextField(label: 'Password', obsecureText: true),
             const SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {
@@ -66,7 +35,7 @@ class Register extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 24),
-                backgroundColor: Colors.black87,
+                backgroundColor: CustomColor().primary,
               ),
               child: const Center(child: Text('Register')),
             ),
@@ -79,12 +48,13 @@ class Register extends StatelessWidget {
               },
               style: OutlinedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 24),
-                side: const BorderSide(color: Colors.black87),
+                side: BorderSide(color: CustomColor().primary),
+                backgroundColor: CustomColor().white,
               ),
-              child: const Center(
+              child: Center(
                 child: Text(
                   'Login',
-                  style: TextStyle(color: Colors.black87),
+                  style: TextStyle(color: CustomColor().primary),
                 ),
               ),
             ),
