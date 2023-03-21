@@ -1,5 +1,5 @@
 import 'package:anonymous/components/CustomTextField.dart';
-import 'package:anonymous/utils/Constants.dart';
+import 'package:anonymous/constants/CustomColor.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatelessWidget {

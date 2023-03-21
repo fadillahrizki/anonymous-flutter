@@ -1,4 +1,4 @@
-import 'package:anonymous/utils/Constants.dart';
+import 'package:anonymous/constants/CustomColor.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -62,7 +62,7 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 50),
+              padding: const EdgeInsets.symmetric(vertical: 50),
               child: Center(
                   child: Text(
                 'Anonymous',
