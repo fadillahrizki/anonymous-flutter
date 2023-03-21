@@ -55,8 +55,9 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.all(24),
+        color: CustomColor().background,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
