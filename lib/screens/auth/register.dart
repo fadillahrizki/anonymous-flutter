@@ -25,13 +25,18 @@ class Register extends StatelessWidget {
             ),
             const CustomTextField(label: 'Nama'),
             const SizedBox(height: 12),
-            const CustomTextField(label: 'Username'),
+            const CustomTextField(label: 'Email'),
+            const SizedBox(height: 12),
+            const CustomTextField(label: 'No HP'),
             const SizedBox(height: 12),
             const CustomTextField(label: 'Password', obsecureText: true),
+            const SizedBox(height: 12),
+            const CustomTextField(
+                label: 'Konfirmasi Password', obsecureText: true),
             const SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/');
+                Navigator.pushNamed(context, '/otp');
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 24),
@@ -44,11 +49,11 @@ class Register extends StatelessWidget {
             const SizedBox(height: 32),
             OutlinedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/login');
+                Navigator.pop(context);
               },
               style: OutlinedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 24),
-                side: BorderSide(color: CustomColor().primary),
+                side: BorderSide(color: CustomColor().secondary),
                 backgroundColor: CustomColor().white,
               ),
               child: Center(

@@ -15,8 +15,11 @@ class Home extends StatelessWidget {
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-              accountName: const Text('Contoh User Panjang'),
-              accountEmail: const Text('contoh.user.panjang@gmail.com'),
+              currentAccountPicture: const CircleAvatar(
+                child: Text("RF"),
+              ),
+              accountName: const Text('Rizky Fadillah'),
+              accountEmail: const Text('fadillahrizki@gmail.com'),
               decoration: BoxDecoration(
                 color: CustomColor().primary,
               ),

@@ -28,11 +28,13 @@ class CustomTextField extends StatelessWidget {
               borderSide: BorderSide(
                 color: CustomColor().primary,
               ),
+              borderRadius: BorderRadius.circular(8),
             ),
-            border: OutlineInputBorder(
+            enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: CustomColor().secondary,
               ),
+              borderRadius: BorderRadius.circular(8),
             ),
             hintText: 'Masukkan $label...',
           ),

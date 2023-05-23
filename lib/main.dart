@@ -3,9 +3,10 @@ import 'package:anonymous/providers/category.dart';
 import 'package:anonymous/providers/product.dart';
 import 'package:anonymous/providers/store.dart';
 import 'package:anonymous/providers/user.dart';
+import 'package:anonymous/screens/auth/otp.dart';
 import 'package:anonymous/screens/home.dart';
-import 'package:anonymous/screens/login.dart';
-import 'package:anonymous/screens/register.dart';
+import 'package:anonymous/screens/auth/login.dart';
+import 'package:anonymous/screens/auth/register.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -30,6 +31,7 @@ class MainApp extends StatelessWidget {
         '/': (context) => const Home(),
         '/register': (context) => const Register(),
         '/login': (context) => const Login(),
+        '/otp': (context) => const Otp(),
       },
     );
   }

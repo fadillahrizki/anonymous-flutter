@@ -2,8 +2,8 @@ import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class Otp extends StatelessWidget {
+  const Otp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +23,7 @@ class Login extends StatelessWidget {
                 style: TextStyle(fontSize: 24, color: CustomColor().primary),
               )),
             ),
-            const CustomTextField(label: 'Username'),
-            const SizedBox(height: 12),
-            const CustomTextField(label: 'Password', obsecureText: true),
+            const CustomTextField(label: 'OTP'),
             const SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {
@@ -35,23 +33,29 @@ class Login extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 24),
                 backgroundColor: CustomColor().primary,
               ),
-              child: const Center(child: Text('Login')),
+              child: const Center(child: Text('Verifikasi')),
             ),
             const SizedBox(height: 32),
-            const Center(child: Text('Belum punya akun?')),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text('Belum menerima OTP?'),
+                Text('Kirim OTP'),
+              ],
+            ),
             const SizedBox(height: 32),
             OutlinedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/register');
+                Navigator.pop(context);
               },
               style: OutlinedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 24),
-                side: BorderSide(color: CustomColor().primary),
+                side: BorderSide(color: CustomColor().secondary),
                 backgroundColor: CustomColor().white,
               ),
               child: Center(
                 child: Text(
-                  'Register',
+                  'Kembali',
                   style: TextStyle(color: CustomColor().primary),
                 ),
               ),
