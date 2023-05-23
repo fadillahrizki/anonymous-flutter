@@ -1,3 +1,4 @@
+import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
@@ -25,40 +26,33 @@ class Otp extends StatelessWidget {
             ),
             const CustomTextField(label: 'OTP'),
             const SizedBox(height: 32),
-            ElevatedButton(
+            CustomButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/');
               },
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 24),
-                backgroundColor: CustomColor().primary,
-              ),
-              child: const Center(child: Text('Verifikasi')),
+              label: 'Verifikasi',
             ),
             const SizedBox(height: 32),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Text('Belum menerima OTP?'),
-                Text('Kirim OTP'),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Kirim OTP',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 32),
-            OutlinedButton(
+            CustomButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              style: OutlinedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 24),
-                side: BorderSide(color: CustomColor().secondary),
-                backgroundColor: CustomColor().white,
-              ),
-              child: Center(
-                child: Text(
-                  'Kembali',
-                  style: TextStyle(color: CustomColor().primary),
-                ),
-              ),
+              label: 'Kembali',
+              type: 'secondary',
             ),
           ],
         ),

@@ -1,3 +1,4 @@
+import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
@@ -27,34 +28,21 @@ class Login extends StatelessWidget {
             const SizedBox(height: 12),
             const CustomTextField(label: 'Password', obsecureText: true),
             const SizedBox(height: 32),
-            ElevatedButton(
+            CustomButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/otp');
               },
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 24),
-                backgroundColor: CustomColor().primary,
-              ),
-              child: const Center(child: Text('Login')),
+              label: 'Login',
             ),
             const SizedBox(height: 32),
             const Center(child: Text('Belum punya akun?')),
             const SizedBox(height: 32),
-            OutlinedButton(
+            CustomButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.pushReplacementNamed(context, '/register');
               },
-              style: OutlinedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 24),
-                side: BorderSide(color: CustomColor().secondary),
-                backgroundColor: CustomColor().white,
-              ),
-              child: Center(
-                child: Text(
-                  'Register',
-                  style: TextStyle(color: CustomColor().primary),
-                ),
-              ),
+              label: 'Register',
+              type: 'secondary',
             ),
           ],
         ),
