@@ -1,6 +1,6 @@
-import 'package:anonymous/screens/Home.dart';
-import 'package:anonymous/screens/Login.dart';
-import 'package:anonymous/screens/Register.dart';
+import 'package:anonymous/screens/home.dart';
+import 'package:anonymous/screens/login.dart';
+import 'package:anonymous/screens/register.dart';
 import 'package:flutter/material.dart';
 
 void main() {

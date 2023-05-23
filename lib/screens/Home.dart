@@ -1,4 +1,4 @@
-import 'package:anonymous/constants/CustomColor.dart';
+import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {

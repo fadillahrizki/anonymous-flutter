@@ -1,5 +1,5 @@
-import 'package:anonymous/components/CustomTextField.dart';
-import 'package:anonymous/constants/CustomColor.dart';
+import 'package:anonymous/components/custom_text_field.dart';
+import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
