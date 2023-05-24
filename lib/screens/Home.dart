@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   border: Border.all(color: CustomColor().secondary),
                   borderRadius: BorderRadius.circular(8),
@@ -46,21 +46,21 @@ class Home extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Toko A',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 6),
-                        Text(
+                        const SizedBox(height: 6),
+                        const Text(
                           'deskripsi toko singkat',
                           style: TextStyle(
                             fontSize: 12,
                           ),
                         ),
-                        SizedBox(height: 6),
+                        const SizedBox(height: 6),
                         CustomButton(
                           onPressed: () {},
                           label: 'Lihat',
@@ -88,6 +88,41 @@ class Home extends StatelessWidget {
                 title: 'Total Kategori',
                 subtitle: '50 Kategori',
                 text: 'Kategori',
+              ),
+              const SizedBox(height: 12),
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.red),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.red[100],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      width: 230,
+                      child: Text(
+                        'Beberapa produk sudah mau habis nih!',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: SizedBox(
+                        width: 150,
+                        child: CustomButton(
+                          onPressed: () {},
+                          label: 'Cek Sekarang',
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ],
           ),
