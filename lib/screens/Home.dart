@@ -1,4 +1,5 @@
 import 'package:anonymous/constants/custom_color.dart';
+import 'package:anonymous/screens/drawer.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -11,53 +12,7 @@ class Home extends StatelessWidget {
         title: const Text('Home'),
         backgroundColor: CustomColor().primary,
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            UserAccountsDrawerHeader(
-              currentAccountPicture: const CircleAvatar(
-                child: Text("RF"),
-              ),
-              accountName: const Text('Rizky Fadillah'),
-              accountEmail: const Text('fadillahrizki@gmail.com'),
-              decoration: BoxDecoration(
-                color: CustomColor().primary,
-              ),
-            ),
-            ListTile(
-              title: const Text('Home'),
-              selected: true,
-              selectedColor: Colors.white,
-              selectedTileColor: CustomColor().primary,
-              onTap: () {},
-            ),
-            ListTile(
-              title: const Text('Edit Profile'),
-              selectedColor: Colors.white,
-              selectedTileColor: CustomColor().primary,
-              onTap: () {},
-            ),
-            ListTile(
-              title: const Text('Manajemen Kategori'),
-              selectedColor: Colors.white,
-              selectedTileColor: CustomColor().primary,
-              onTap: () {},
-            ),
-            ListTile(
-              title: const Text('Manajemen Produk'),
-              selectedColor: Colors.white,
-              selectedTileColor: CustomColor().primary,
-              onTap: () {},
-            ),
-            ListTile(
-              title: const Text('Logout'),
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '/login');
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const MyDrawer(),
       body: Container(
         padding: const EdgeInsets.all(24),
         color: CustomColor().background,
