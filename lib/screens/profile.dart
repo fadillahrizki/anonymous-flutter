@@ -39,7 +39,7 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        title: Text(isEditing ? 'Edit Profile' : 'Profile'),
         backgroundColor: CustomColor().primary,
       ),
       drawer: const MyDrawer(),
