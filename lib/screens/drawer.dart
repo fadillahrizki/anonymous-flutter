@@ -31,7 +31,9 @@ class MyDrawer extends StatelessWidget {
             title: const Text('Profile'),
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/profile');
+            },
           ),
           ListTile(
             title: const Text('Manajemen Kategori'),

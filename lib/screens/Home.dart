@@ -17,9 +17,10 @@ class Home extends StatelessWidget {
       ),
       drawer: const MyDrawer(),
       body: Container(
+        width: MediaQuery.of(context).size.width,
         color: CustomColor().background,
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
