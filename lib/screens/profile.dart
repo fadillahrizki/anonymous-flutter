@@ -1,3 +1,4 @@
+import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/components/home/new_user.dart';
 import 'package:anonymous/components/statistic_card.dart';
@@ -38,10 +39,7 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(isEditing ? 'Edit Profile' : 'Profile'),
-        backgroundColor: CustomColor().primary,
-      ),
+      appBar: const CustomAppBar(title: "Profile"),
       drawer: const MyDrawer(),
       body: Container(
         width: MediaQuery.of(context).size.width,
