@@ -3,8 +3,9 @@ import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/components/home/new_user.dart';
 import 'package:anonymous/components/statistic_card.dart';
 import 'package:anonymous/constants/custom_color.dart';
-import 'package:anonymous/screens/drawer.dart';
 import 'package:flutter/material.dart';
+
+import '../components/drawer.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
