@@ -3,8 +3,9 @@ import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/components/home/new_user.dart';
 import 'package:anonymous/components/statistic_card.dart';
 import 'package:anonymous/constants/custom_color.dart';
-import 'package:anonymous/screens/drawer.dart';
 import 'package:flutter/material.dart';
+
+import '../components/drawer.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -14,9 +15,9 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: 'Home'),
       drawer: const MyDrawer(),
+      backgroundColor: CustomColor().background,
       body: Container(
         width: MediaQuery.of(context).size.width,
-        color: CustomColor().background,
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(

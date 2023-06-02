@@ -1,9 +1,11 @@
 import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/custom_button.dart';
+import 'package:anonymous/components/custom_dialog.dart';
+import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/components/home/new_user.dart';
 import 'package:anonymous/components/statistic_card.dart';
 import 'package:anonymous/constants/custom_color.dart';
-import 'package:anonymous/screens/drawer.dart';
+import '../components/drawer.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -40,10 +42,10 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: "Profile"),
-      drawer: const MyDrawer(),
+      drawer: const MyDrawer(active: 'Profile'),
+      backgroundColor: CustomColor().background,
       body: Container(
         width: MediaQuery.of(context).size.width,
-        color: CustomColor().background,
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
@@ -109,7 +111,34 @@ class _ProfileState extends State<Profile> {
               CustomButton(
                 onPressed: () {
                   setState(() {
-                    isEditing = !isEditing;
+                    if (isEditing) {
+                      showDialog(
+                        context: context,
+                        builder: (_) => CustomDialog(
+                          content: [
+                            CustomTextField(label: "Kode OTP"),
+                            SizedBox(height: 12),
+                            CustomButton(
+                              onPressed: () {
+                                isEditing = !isEditing;
+                                Navigator.pop(context);
+                              },
+                              label: "Konfirmasi",
+                            ),
+                            SizedBox(height: 12),
+                            CustomButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              label: "Kembali",
+                              type: "secondary",
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      isEditing = !isEditing;
+                    }
                   });
                 },
                 label: isEditing ? 'Selesai' : 'Edit Profile',
