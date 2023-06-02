@@ -42,10 +42,10 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: "Profile"),
-      drawer: const MyDrawer(),
+      drawer: const MyDrawer(active: 'Profile'),
+      backgroundColor: CustomColor().background,
       body: Container(
         width: MediaQuery.of(context).size.width,
-        color: CustomColor().background,
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(

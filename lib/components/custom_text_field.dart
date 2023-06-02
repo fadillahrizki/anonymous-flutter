@@ -5,10 +5,12 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
     this.obsecureText = false,
+    this.maxLines = 1,
     required this.label,
   });
 
   final String label;
+  final int maxLines;
   final bool obsecureText;
 
   @override
@@ -19,6 +21,7 @@ class CustomTextField extends StatelessWidget {
         Text(label),
         const SizedBox(height: 12),
         TextField(
+          maxLines: maxLines,
           obscureText: obsecureText,
           cursorColor: CustomColor().primary,
           decoration: InputDecoration(

@@ -15,9 +15,9 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: 'Home'),
       drawer: const MyDrawer(),
+      backgroundColor: CustomColor().background,
       body: Container(
         width: MediaQuery.of(context).size.width,
-        color: CustomColor().background,
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(

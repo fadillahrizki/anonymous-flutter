@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import '../constants/custom_color.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({super.key});
+  const MyDrawer({
+    super.key,
+    this.active = 'Home',
+  });
+
+  final String active;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +27,16 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             title: const Text('Home'),
-            selected: true,
+            selected: active == 'Home' ? true : false,
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/');
+            },
           ),
           ListTile(
             title: const Text('Profile'),
+            selected: active == 'Profile' ? true : false,
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {
@@ -37,12 +45,14 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             title: const Text('Manajemen Kategori'),
+            selected: active == 'Manajemen Kategori' ? true : false,
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {},
           ),
           ListTile(
             title: const Text('Manajemen Produk'),
+            selected: active == 'Manajemen Produk' ? true : false,
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             trailing: Container(
@@ -58,12 +68,14 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             title: const Text('Manajemen Pegawai'),
+            selected: active == 'Manajemen Pegawai' ? true : false,
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {},
           ),
           ListTile(
             title: const Text('Konfirmasi User'),
+            selected: active == 'Konfirmasi User' ? true : false,
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {},

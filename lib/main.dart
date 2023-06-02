@@ -8,6 +8,7 @@ import 'package:anonymous/screens/home.dart';
 import 'package:anonymous/screens/auth/login.dart';
 import 'package:anonymous/screens/auth/register.dart';
 import 'package:anonymous/screens/profile.dart';
+import 'package:anonymous/screens/store/create_store.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -34,6 +35,7 @@ class MainApp extends StatelessWidget {
         '/login': (context) => const Login(),
         '/otp': (context) => const Otp(),
         '/profile': (context) => const Profile(),
+        '/store/create': (context) => const CreateStore(),
       },
     );
   }
