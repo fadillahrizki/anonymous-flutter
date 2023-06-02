@@ -1,5 +1,7 @@
 import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/custom_button.dart';
+import 'package:anonymous/components/custom_dialog.dart';
+import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/components/home/new_user.dart';
 import 'package:anonymous/components/statistic_card.dart';
 import 'package:anonymous/constants/custom_color.dart';
@@ -109,7 +111,34 @@ class _ProfileState extends State<Profile> {
               CustomButton(
                 onPressed: () {
                   setState(() {
-                    isEditing = !isEditing;
+                    if (isEditing) {
+                      showDialog(
+                        context: context,
+                        builder: (_) => CustomDialog(
+                          content: [
+                            CustomTextField(label: "Kode OTP"),
+                            SizedBox(height: 12),
+                            CustomButton(
+                              onPressed: () {
+                                isEditing = !isEditing;
+                                Navigator.pop(context);
+                              },
+                              label: "Konfirmasi",
+                            ),
+                            SizedBox(height: 12),
+                            CustomButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              label: "Kembali",
+                              type: "secondary",
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      isEditing = !isEditing;
+                    }
                   });
                 },
                 label: isEditing ? 'Selesai' : 'Edit Profile',
