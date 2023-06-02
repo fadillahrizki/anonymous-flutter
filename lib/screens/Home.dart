@@ -62,7 +62,10 @@ class Home extends StatelessWidget {
                         ),
                         const SizedBox(height: 6),
                         CustomButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(
+                                context, '/store/detail');
+                          },
                           label: 'Lihat',
                           size: 'mini',
                         )
