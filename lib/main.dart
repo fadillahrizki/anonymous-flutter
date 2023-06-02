@@ -39,12 +39,9 @@ class MainApp extends StatelessWidget {
         '/otp': (context) => const Otp(),
         '/profile': (context) => const Profile(),
         '/store/create': (context) => const CreateStore(),
-<<<<<<< HEAD
-        '/product': (context) => const ListProduct()
-=======
         '/store/detail': (context) => const DetailStore(),
         '/store/qr': (context) => const QrStore(),
->>>>>>> 294b925045821ced54f8f9175a867844830cd69e
+        '/product': (context) => const ListProduct()
       },
     );
   }

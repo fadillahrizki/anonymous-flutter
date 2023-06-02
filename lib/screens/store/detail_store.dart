@@ -2,8 +2,6 @@ import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/components/custom_dialog.dart';
 import 'package:anonymous/components/custom_text_field.dart';
-import 'package:anonymous/components/home/new_user.dart';
-import 'package:anonymous/components/statistic_card.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 
