@@ -1,10 +1,9 @@
 import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/product_card.dart';
 import 'package:anonymous/constants/custom_color.dart';
-import 'package:anonymous/screens/drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
+import '../../components/drawer.dart';
 
 class ListProduct extends StatefulWidget {
   const ListProduct({super.key});

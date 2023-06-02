@@ -65,7 +65,7 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pushNamed(context, '/list-product');
+              Navigator.pushNamed(context, '/product');
             },
           ),
           ListTile(

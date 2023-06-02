@@ -7,6 +7,7 @@ import 'package:anonymous/screens/auth/otp.dart';
 import 'package:anonymous/screens/home.dart';
 import 'package:anonymous/screens/auth/login.dart';
 import 'package:anonymous/screens/auth/register.dart';
+import 'package:anonymous/screens/products/product_list.dart';
 import 'package:anonymous/screens/profile.dart';
 import 'package:anonymous/screens/store/create_store.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +37,7 @@ class MainApp extends StatelessWidget {
         '/otp': (context) => const Otp(),
         '/profile': (context) => const Profile(),
         '/store/create': (context) => const CreateStore(),
+        '/product': (context) => const ListProduct()
       },
     );
   }
