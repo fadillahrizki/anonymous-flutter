@@ -19,8 +19,8 @@ class _ListProductState extends State<ListProduct> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: CustomColor().background,
-        appBar: CustomAppBar(title: "Manajemen Product"),
-        drawer: MyDrawer(),
+        appBar: const CustomAppBar(title: "Manajemen Product"),
+        drawer: const MyDrawer(),
         body: SingleChildScrollView(
             physics: ScrollPhysics(),
             child: Column(
@@ -33,21 +33,41 @@ class _ListProductState extends State<ListProduct> {
                             CustomColor().white))),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
+                  children: [
                     SizedBox(
-                        width: 420,
+                        width: 350,
                         child: Padding(
-                          padding: EdgeInsets.all(20),
+                          padding: const EdgeInsets.only(
+                              top: 20, bottom: 20, right: 8),
                           child: TextField(
                             decoration: InputDecoration(
                                 labelText: "Cari",
                                 contentPadding: EdgeInsets.all(8),
                                 filled: true,
                                 fillColor: Colors.white,
-                                border: OutlineInputBorder()),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: BorderSide(
+                                        width: 1.5,
+                                        color: CustomColor().secondary)),
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: BorderSide(
+                                        width: 1.5,
+                                        color: CustomColor().secondary))),
                           ),
                         )),
-                    Icon(Icons.search)
+                    Container(
+                      padding: EdgeInsets.all(3),
+                      decoration: BoxDecoration(
+                          color: CustomColor().white,
+                          shape: BoxShape.rectangle,
+                          border: Border.all(
+                              width: 1.5, color: CustomColor().secondary),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: IconButton(
+                          onPressed: () {}, icon: const Icon(Icons.search)),
+                    )
                   ],
                 ),
                 ListView.builder(

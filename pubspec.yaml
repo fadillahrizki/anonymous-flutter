@@ -1,16 +1,18 @@
 name: anonymous
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=2.19.3 <3.0.0'
+  sdk: ">=2.19.6 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.5
+  fluttertoast: ^8.2.2
   provider: ^6.0.5
+  qr_flutter: ^4.1.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -19,5 +21,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets: 
+  assets:
     - assets/hamburger.svg

@@ -25,9 +25,9 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
         decoration: BoxDecoration(
-          border: Border.all(color: CustomColor().secondary),
+          border: Border.all(color: CustomColor().secondary, width: 1.5),
           borderRadius: BorderRadius.circular(8),
           color: CustomColor().white,
         ),
@@ -35,7 +35,7 @@ class _ProductCardState extends State<ProductCard> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CircleAvatar(
-              radius: 50,
+              radius: 60,
               backgroundColor: CustomColor().primary,
               child: Text(
                 widget.itemImage,
@@ -57,7 +57,7 @@ class _ProductCardState extends State<ProductCard> {
                 Text(
                   widget.itemName,
                   style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                      fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 6),
                 Text(
@@ -84,7 +84,7 @@ class _ProductCardState extends State<ProductCard> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-                            left: 50.0, right: 50.0, top: 15),
+                            left: 35.0, right: 35.0, top: 15),
                         child: Text(
                           '${widget.itemStock}',
                           style: const TextStyle(
@@ -108,9 +108,14 @@ class _ProductCardState extends State<ProductCard> {
                 const SizedBox(height: 6),
               ],
             ),
-            Align(
-              child: Icon(Icons.delete),
-              alignment: Alignment.topCenter,
+            Padding(
+              padding: const EdgeInsets.only(left: 45, bottom: 100),
+              child: Align(
+                  alignment: Alignment.topCenter,
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.delete),
+                      iconSize: 30)),
             ),
           ],
         ),

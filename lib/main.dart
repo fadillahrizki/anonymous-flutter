@@ -10,6 +10,8 @@ import 'package:anonymous/screens/auth/register.dart';
 import 'package:anonymous/screens/products/product_list.dart';
 import 'package:anonymous/screens/profile.dart';
 import 'package:anonymous/screens/store/create_store.dart';
+import 'package:anonymous/screens/store/detail_store.dart';
+import 'package:anonymous/screens/store/qr_store.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -37,7 +39,12 @@ class MainApp extends StatelessWidget {
         '/otp': (context) => const Otp(),
         '/profile': (context) => const Profile(),
         '/store/create': (context) => const CreateStore(),
+<<<<<<< HEAD
         '/product': (context) => const ListProduct()
+=======
+        '/store/detail': (context) => const DetailStore(),
+        '/store/qr': (context) => const QrStore(),
+>>>>>>> 294b925045821ced54f8f9175a867844830cd69e
       },
     );
   }
