@@ -54,7 +54,9 @@ class MyDrawer extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100),
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/list-product');
+            },
           ),
           ListTile(
             title: const Text('Manajemen Pegawai'),
