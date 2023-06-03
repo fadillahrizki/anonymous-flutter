@@ -46,8 +46,8 @@ class _DetailStoreState extends State<DetailStore> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: "Detail Toko"),
-      drawer: const MyDrawer(),
+      appBar: const CustomAppBar(title: "Manajemen Toko"),
+      drawer: const MyDrawer(active: "Manajemen Toko"),
       backgroundColor: CustomColor().background,
       body: Container(
         width: MediaQuery.of(context).size.width,

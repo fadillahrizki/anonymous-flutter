@@ -44,6 +44,15 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            title: const Text('Manajemen Toko'),
+            selected: active == 'Manajemen Toko' ? true : false,
+            selectedColor: Colors.white,
+            selectedTileColor: CustomColor().primary,
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/store/detail');
+            },
+          ),
+          ListTile(
             title: const Text('Manajemen Kategori'),
             selected: active == 'Manajemen Kategori' ? true : false,
             selectedColor: Colors.white,
