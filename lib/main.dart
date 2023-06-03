@@ -12,6 +12,7 @@ import 'package:anonymous/screens/profile.dart';
 import 'package:anonymous/screens/store/create_store.dart';
 import 'package:anonymous/screens/store/detail_store.dart';
 import 'package:anonymous/screens/store/qr_store.dart';
+import 'package:anonymous/screens/store/staff_store.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -41,6 +42,7 @@ class MainApp extends StatelessWidget {
         '/store/create': (context) => const CreateStore(),
         '/store/detail': (context) => const DetailStore(),
         '/store/qr': (context) => const QrStore(),
+        '/store/staff': (context) => const StaffStore(),
         '/product': (context) => const ListProduct()
       },
     );
