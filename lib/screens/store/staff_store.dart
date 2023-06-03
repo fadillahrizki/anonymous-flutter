@@ -59,6 +59,9 @@ class _StaffStoreState extends State<StaffStore>
                       return Card(
                         margin: const EdgeInsets.only(bottom: 12),
                         child: ListTile(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/store/staff/detail');
+                          },
                           contentPadding: const EdgeInsets.symmetric(
                             horizontal: 20,
                             vertical: 12,
@@ -114,6 +117,9 @@ class _StaffStoreState extends State<StaffStore>
                       return Card(
                         margin: const EdgeInsets.only(bottom: 12),
                         child: ListTile(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/store/staff/detail');
+                          },
                           contentPadding: const EdgeInsets.symmetric(
                             horizontal: 20,
                             vertical: 12,

@@ -31,6 +31,9 @@ class _UserStoreState extends State<UserStore> {
                   return Card(
                     margin: const EdgeInsets.only(bottom: 12),
                     child: ListTile(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/store/user/detail');
+                      },
                       contentPadding: const EdgeInsets.symmetric(
                         horizontal: 20,
                         vertical: 12,

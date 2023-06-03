@@ -10,7 +10,9 @@ import 'package:anonymous/screens/auth/register.dart';
 import 'package:anonymous/screens/products/product_list.dart';
 import 'package:anonymous/screens/profile.dart';
 import 'package:anonymous/screens/store/create_store.dart';
+import 'package:anonymous/screens/store/detail_staff.dart';
 import 'package:anonymous/screens/store/detail_store.dart';
+import 'package:anonymous/screens/store/detail_user.dart';
 import 'package:anonymous/screens/store/qr_store.dart';
 import 'package:anonymous/screens/store/staff_store.dart';
 import 'package:anonymous/screens/store/user_store.dart';
@@ -43,7 +45,9 @@ class MainApp extends StatelessWidget {
         '/store/create': (context) => const CreateStore(),
         '/store/detail': (context) => const DetailStore(),
         '/store/qr': (context) => const QrStore(),
+        '/store/staff/detail': (context) => const DetailStaff(),
         '/store/staff': (context) => const StaffStore(),
+        '/store/user/detail': (context) => const DetailUser(),
         '/store/user': (context) => const UserStore(),
         '/product': (context) => const ListProduct()
       },

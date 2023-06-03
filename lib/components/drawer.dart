@@ -31,7 +31,7 @@ class MyDrawer extends StatelessWidget {
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {
-              Navigator.pushNamed(context, '/');
+              Navigator.pushReplacementNamed(context, '/');
             },
           ),
           ListTile(
@@ -40,7 +40,7 @@ class MyDrawer extends StatelessWidget {
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {
-              Navigator.pushNamed(context, '/profile');
+              Navigator.pushReplacementNamed(context, '/profile');
             },
           ),
           ListTile(
@@ -65,7 +65,7 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pushNamed(context, '/product');
+              Navigator.pushReplacementNamed(context, '/product');
             },
           ),
           ListTile(
@@ -80,7 +80,9 @@ class MyDrawer extends StatelessWidget {
             selected: active == 'Konfirmasi User' ? true : false,
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/store/user');
+            },
           ),
           ListTile(
             title: const Text('Keluar'),
