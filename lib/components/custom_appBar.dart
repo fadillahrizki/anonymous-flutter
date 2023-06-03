@@ -16,23 +16,20 @@ class _CustomAppBarState extends State<CustomAppBar> {
   final String assetName = '../../assets/hamburger.svg';
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 5.0),
-      child: AppBar(
-        leadingWidth: 100,
-        toolbarHeight: 100,
-        leading: Builder(
-          builder: (context) => IconButton(
-              onPressed: () => Scaffold.of(context).openDrawer(),
-              icon: SvgPicture.asset(assetName)),
-        ),
-        backgroundColor: CustomColor().background,
-        shadowColor: Colors.transparent,
-        title: Text(
-          '${widget.title}',
-          style: TextStyle(
-              color: CustomColor().primary, fontWeight: FontWeight.w600),
-        ),
+    return AppBar(
+      leadingWidth: 100,
+      toolbarHeight: 100,
+      leading: Builder(
+        builder: (context) => IconButton(
+            onPressed: () => Scaffold.of(context).openDrawer(),
+            icon: SvgPicture.asset(assetName)),
+      ),
+      backgroundColor: CustomColor().background,
+      shadowColor: Colors.transparent,
+      title: Text(
+        widget.title,
+        style: TextStyle(
+            color: CustomColor().primary, fontWeight: FontWeight.w600),
       ),
     );
   }

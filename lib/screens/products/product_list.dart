@@ -13,8 +13,6 @@ class ListProduct extends StatefulWidget {
 }
 
 class _ListProductState extends State<ListProduct> {
-  final List<String> items = List<String>.generate(20, (i) => '$i');
-  List menu = ["test", "hai", "dimana"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,27 +20,32 @@ class _ListProductState extends State<ListProduct> {
         appBar: const CustomAppBar(title: "Manajemen Product"),
         drawer: const MyDrawer(),
         body: SingleChildScrollView(
-            physics: ScrollPhysics(),
+            physics: const ScrollPhysics(),
             child: Column(
               children: <Widget>[
-                DropdownMenu(
-                    dropdownMenuEntries: [],
-                    width: 200,
-                    menuStyle: MenuStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            CustomColor().white))),
+                Container(
+                  width: 300.0,
+                  child: DropdownButtonHideUnderline(
+                    child: ButtonTheme(
+                      alignedDropdown: true,
+                      child: DropdownButton(
+                        items: [],
+                        onChanged: (value) {},
+                      ),
+                    ),
+                  ),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SizedBox(
-                        width: 350,
+                        width: MediaQuery.of(context).size.width - 120,
                         child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 20, bottom: 20, right: 8),
+                          padding: const EdgeInsets.only(top: 20, bottom: 20),
                           child: TextField(
                             decoration: InputDecoration(
                                 labelText: "Cari",
-                                contentPadding: EdgeInsets.all(8),
+                                contentPadding: const EdgeInsets.all(8),
                                 filled: true,
                                 fillColor: Colors.white,
                                 focusedBorder: OutlineInputBorder(
@@ -58,7 +61,6 @@ class _ListProductState extends State<ListProduct> {
                           ),
                         )),
                     Container(
-                      padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
                           color: CustomColor().white,
                           shape: BoxShape.rectangle,
@@ -73,11 +75,11 @@ class _ListProductState extends State<ListProduct> {
                 ListView.builder(
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
-                  padding: const EdgeInsets.only(left: 30, right: 30),
-                  itemCount: items.length,
+                  padding: const EdgeInsets.all(20),
+                  itemCount: 10,
                   itemBuilder: (context, int index) {
                     return Padding(
-                      padding: const EdgeInsets.only(top: 10, bottom: 10),
+                      padding: const EdgeInsets.only(top: 8),
                       child: ProductCard(
                           itemCode: "A000${index + 1}",
                           itemName: "Produk ${index + 1}",

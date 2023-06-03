@@ -22,97 +22,107 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        padding: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
+        width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.only(left: 20),
         decoration: BoxDecoration(
           border: Border.all(color: CustomColor().secondary, width: 1.5),
           borderRadius: BorderRadius.circular(8),
           color: CustomColor().white,
         ),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              radius: 60,
-              backgroundColor: CustomColor().primary,
-              child: Text(
-                widget.itemImage,
-                style: TextStyle(color: CustomColor().white, fontSize: 12),
+            Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 12.0),
+                  child: CircleAvatar(
+                    radius: 50,
+                    backgroundColor: CustomColor().primary,
+                    child: Text(
+                      widget.itemImage,
+                      style:
+                          TextStyle(color: CustomColor().white, fontSize: 12),
+                    ),
+                  ),
+                )),
+            const SizedBox(width: 6),
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10, bottom: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      widget.itemCode,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      widget.itemName,
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'Rp.${widget.itemPrice}',
+                      style: const TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 35,
+                            height: 35,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                color: CustomColor().background,
+                                borderRadius: BorderRadius.circular(8)),
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(Icons.remove),
+                                iconSize: 18),
+                          ),
+                          Text(
+                            '${widget.itemStock}',
+                            style: const TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Container(
+                            width: 35,
+                            height: 35,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                color: CustomColor().background,
+                                borderRadius: BorderRadius.circular(8)),
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.add),
+                              iconSize: 18,
+                            ),
+                          ),
+                        ]),
+                    const SizedBox(height: 6),
+                  ],
+                ),
               ),
             ),
-            const SizedBox(width: 30),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  widget.itemCode,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  widget.itemName,
-                  style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  'Rp.${widget.itemPrice}',
-                  style: const TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 15),
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.rectangle,
-                              color: CustomColor().background,
-                              borderRadius: BorderRadius.circular(8)),
-                          child: IconButton(
-                              onPressed: () {}, icon: const Icon(Icons.remove)),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            left: 35.0, right: 35.0, top: 15),
-                        child: Text(
-                          '${widget.itemStock}',
-                          style: const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 15),
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.rectangle,
-                              color: CustomColor().background,
-                              borderRadius: BorderRadius.circular(8)),
-                          child: IconButton(
-                              onPressed: () {}, icon: const Icon(Icons.add)),
-                        ),
-                      ),
-                    ]),
-                const SizedBox(height: 6),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 45, bottom: 100),
+            Expanded(
+              flex: 1,
               child: Align(
-                  alignment: Alignment.topCenter,
+                  alignment: Alignment.topRight,
                   child: IconButton(
                       onPressed: () {},
                       icon: const Icon(Icons.delete),
-                      iconSize: 30)),
+                      iconSize: 28)),
             ),
           ],
         ),
