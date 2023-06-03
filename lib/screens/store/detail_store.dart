@@ -144,7 +144,9 @@ class _DetailStoreState extends State<DetailStore> {
                   ),
                   SizedBox(height: 12),
                   CustomButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/store/staff');
+                    },
                     label: "Daftar Pegawai",
                     type: "secondary",
                   ),

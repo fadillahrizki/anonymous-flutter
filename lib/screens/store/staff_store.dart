@@ -38,7 +38,7 @@ class _StaffStoreState extends State<StaffStore>
                 controller: tabController,
                 indicator: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: Colors.green,
+                  color: CustomColor().primary,
                 ),
                 labelColor: Colors.white,
                 unselectedLabelColor: Colors.black,
@@ -63,10 +63,45 @@ class _StaffStoreState extends State<StaffStore>
                             horizontal: 20,
                             vertical: 12,
                           ),
+                          leading: CircleAvatar(
+                            child: Text(
+                              items[index],
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ),
                           title: Text(items[index]),
                           trailing: IconButton(
                             icon: const Icon(Icons.archive),
-                            onPressed: () {},
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (_) => AlertDialog(
+                                  content: Text(
+                                      "Apakah Anda yakin ingin mengarsipkannya?"),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(
+                                        "Batal",
+                                        style: TextStyle(
+                                            color: CustomColor().primary),
+                                      ),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(
+                                        "Arsipkan",
+                                        style: TextStyle(color: Colors.red),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
                           ),
                         ),
                       );
@@ -83,10 +118,45 @@ class _StaffStoreState extends State<StaffStore>
                             horizontal: 20,
                             vertical: 12,
                           ),
+                          leading: CircleAvatar(
+                            child: Text(
+                              items[index],
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ),
                           title: Text(items[index]),
                           trailing: IconButton(
                             icon: const Icon(Icons.unarchive),
-                            onPressed: () {},
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (_) => AlertDialog(
+                                  content: Text(
+                                      "Apakah Anda yakin ingin mengaktifkan pegawai?"),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(
+                                        "Batal",
+                                        style: TextStyle(
+                                            color: CustomColor().primary),
+                                      ),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(
+                                        "Aktifkan",
+                                        style: TextStyle(color: Colors.green),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
                           ),
                         ),
                       );
