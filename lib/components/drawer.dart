@@ -73,7 +73,9 @@ class MyDrawer extends StatelessWidget {
             selected: active == 'Manajemen Pegawai' ? true : false,
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/store/staff');
+            },
           ),
           ListTile(
             title: const Text('Konfirmasi User'),
