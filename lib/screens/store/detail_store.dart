@@ -109,36 +109,38 @@ class _DetailStoreState extends State<DetailStore> {
                 children: [
                   CustomButton(
                     onPressed: () {
-                      setState(() {
-                        if (isEditing) {
-                          showDialog(
-                            context: context,
-                            builder: (_) => CustomDialog(
-                              content: [
-                                CustomTextField(label: "Kode OTP"),
-                                SizedBox(height: 12),
-                                CustomButton(
-                                  onPressed: () {
+                      if (isEditing) {
+                        showDialog(
+                          context: context,
+                          builder: (_) => CustomDialog(
+                            content: [
+                              CustomTextField(label: "Kode OTP"),
+                              SizedBox(height: 12),
+                              CustomButton(
+                                onPressed: () {
+                                  setState(() {
                                     isEditing = !isEditing;
-                                    Navigator.pop(context);
-                                  },
-                                  label: "Konfirmasi",
-                                ),
-                                SizedBox(height: 12),
-                                CustomButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  label: "Kembali",
-                                  type: "secondary",
-                                ),
-                              ],
-                            ),
-                          );
-                        } else {
+                                  });
+                                  Navigator.pop(context);
+                                },
+                                label: "Konfirmasi",
+                              ),
+                              SizedBox(height: 12),
+                              CustomButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                label: "Kembali",
+                                type: "secondary",
+                              ),
+                            ],
+                          ),
+                        );
+                      } else {
+                        setState(() {
                           isEditing = !isEditing;
-                        }
-                      });
+                        });
+                      }
                     },
                     label: isEditing ? 'Selesai' : 'Edit Toko',
                   ),
