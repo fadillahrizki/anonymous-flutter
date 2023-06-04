@@ -8,7 +8,7 @@ class ProductCard extends StatefulWidget {
     required this.itemName,
     required this.itemPrice,
     required this.itemStock,
-    this.itemImage = "Gambar Produk",
+    this.itemImage = "",
   });
 
   final String itemCode, itemName, itemPrice, itemImage;
@@ -23,9 +23,9 @@ class _ProductCardState extends State<ProductCard> {
     return Card(
       child: Container(
         width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.only(left: 20),
+        padding: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
         decoration: BoxDecoration(
-          border: Border.all(color: CustomColor().secondary, width: 1.5),
+          border: Border.all(color: CustomColor().secondary, width: 1),
           borderRadius: BorderRadius.circular(8),
           color: CustomColor().white,
         ),
@@ -47,7 +47,7 @@ class _ProductCardState extends State<ProductCard> {
                     ),
                   ),
                 )),
-            const SizedBox(width: 6),
+            const SizedBox(width: 20),
             Expanded(
               flex: 2,
               child: Padding(
