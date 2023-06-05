@@ -78,6 +78,40 @@ class _ListCategoryState extends State<ListCategory> {
                         ),
                         child: Text('Kategori ${index + 1}'),
                       ),
+                      trailing: IconButton(
+                        icon: Icon(Icons.delete),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (_) => AlertDialog(
+                              content: Text(
+                                "Apakah Anda yakin ingin menghapus kategori ini?",
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text(
+                                    "Batal",
+                                    style:
+                                        TextStyle(color: CustomColor().primary),
+                                  ),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text(
+                                    "Hapus",
+                                    style: TextStyle(color: Colors.red),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
                       onTap: () {},
                     ),
                   );
