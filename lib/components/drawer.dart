@@ -57,7 +57,9 @@ class MyDrawer extends StatelessWidget {
             selected: active == 'Manajemen Kategori' ? true : false,
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/category');
+            },
           ),
           ListTile(
             title: const Text('Manajemen Produk'),
