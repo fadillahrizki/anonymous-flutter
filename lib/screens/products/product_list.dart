@@ -1,6 +1,5 @@
 import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/custom_filterFAB.dart';
-import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/components/product_card.dart';
 import 'package:anonymous/components/search.dart';
 import 'package:anonymous/constants/custom_color.dart';
@@ -95,6 +94,7 @@ class _ListProductState extends State<ListProduct> {
                         itemName: "Produk ${index + 1}",
                         itemPrice: "${(index + 1) * 10000}",
                         itemStock: index + 1,
+                        itemidx: index,
                       ),
                     );
                   },
