@@ -1,3 +1,4 @@
+import 'package:anonymous/components/product_filterBottomSheet.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/custom_color.dart';
@@ -24,7 +25,13 @@ class CustomFAB extends StatelessWidget {
               child: IconButton(
                   iconSize: 30,
                   color: CustomColor().primary,
-                  onPressed: () => Scaffold.of(context).openDrawer(),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return const ProductFilterBottomSheet();
+                        });
+                  },
                   icon: const Icon(Icons.filter_alt_outlined)),
             ),
           )),

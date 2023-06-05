@@ -137,7 +137,7 @@ class _StaffStoreState extends State<StaffStore>
                               showDialog(
                                 context: context,
                                 builder: (_) => AlertDialog(
-                                  content: Text(
+                                  content: const Text(
                                       "Apakah Anda yakin ingin mengaktifkan pegawai?"),
                                   actions: [
                                     TextButton(
@@ -154,7 +154,7 @@ class _StaffStoreState extends State<StaffStore>
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
-                                      child: Text(
+                                      child: const Text(
                                         "Aktifkan",
                                         style: TextStyle(color: Colors.green),
                                       ),

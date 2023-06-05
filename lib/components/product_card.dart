@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../constants/custom_color.dart';
 
 class ProductCard extends StatefulWidget {
@@ -8,11 +9,12 @@ class ProductCard extends StatefulWidget {
     required this.itemName,
     required this.itemPrice,
     required this.itemStock,
+    required this.itemidx,
     this.itemImage = "",
   });
 
   final String itemCode, itemName, itemPrice, itemImage;
-  final int itemStock;
+  final int itemStock, itemidx;
   @override
   State<ProductCard> createState() => _ProductCardState();
 }
@@ -120,7 +122,99 @@ class _ProductCardState extends State<ProductCard> {
               child: Align(
                   alignment: Alignment.topRight,
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: ((_) => AlertDialog(
+                                  content: const Text(
+                                      "Apakah Anda yakin ingin menghapus produk ini?"),
+                                  actionsAlignment: MainAxisAlignment.center,
+                                  actions: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        children: [
+                                          SizedBox(
+                                            width: 350,
+                                            height: 40,
+                                            child: ElevatedButton(
+                                                style: ButtonStyle(
+                                                    shape: MaterialStateProperty.all(
+                                                        RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                    8),
+                                                            side: BorderSide(
+                                                                width: 0.5,
+                                                                color: CustomColor()
+                                                                    .secondary))),
+                                                    elevation:
+                                                        MaterialStateProperty.all(
+                                                            1),
+                                                    backgroundColor:
+                                                        MaterialStateProperty
+                                                            .all<Color>(
+                                                                CustomColor()
+                                                                    .primary)),
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                  Fluttertoast.showToast(
+                                                      msg:
+                                                          "Produk Telah Dihapus",
+                                                      toastLength:
+                                                          Toast.LENGTH_LONG);
+                                                },
+                                                child: Text(
+                                                  "Hapus",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      color:
+                                                          CustomColor().white,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                )),
+                                          ),
+                                          const SizedBox(height: 25),
+                                          SizedBox(
+                                            width: 350,
+                                            height: 40,
+                                            child: ElevatedButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
+                                                style: ButtonStyle(
+                                                    shape: MaterialStateProperty.all(
+                                                        RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8),
+                                                            side: BorderSide(
+                                                                width: 0.5,
+                                                                color: CustomColor()
+                                                                    .secondary))),
+                                                    elevation:
+                                                        MaterialStateProperty.all(
+                                                            1),
+                                                    backgroundColor:
+                                                        MaterialStateProperty.all<
+                                                                Color>(
+                                                            CustomColor().white)),
+                                                child: Text(
+                                                  "Batal",
+                                                  style: TextStyle(
+                                                      color:
+                                                          CustomColor().primary,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                )),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                )));
+                      },
                       icon: const Icon(Icons.delete),
                       iconSize: 28)),
             ),

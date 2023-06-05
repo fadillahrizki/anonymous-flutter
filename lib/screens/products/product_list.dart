@@ -32,9 +32,14 @@ class _ListProductState extends State<ListProduct> {
                     color: CustomColor().white,
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(color: CustomColor().secondary)),
-                width: 400.0,
                 child: DropdownMenu(
-                  dropdownMenuEntries: [],
+                  width: MediaQuery.of(context).size.width - 55,
+                  dropdownMenuEntries: const [
+                    DropdownMenuEntry(value: Null, label: "Semua"),
+                    DropdownMenuEntry(value: "Palu", label: "Palu"),
+                    DropdownMenuEntry(value: "Cat", label: "Cat"),
+                    DropdownMenuEntry(value: "Kran air", label: "Kran air"),
+                  ],
                   hintText: "Pilih Kategori",
                   menuStyle: MenuStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
@@ -49,8 +54,10 @@ class _ListProductState extends State<ListProduct> {
                       child: Padding(
                         padding: const EdgeInsets.only(top: 20, bottom: 20),
                         child: TextField(
+                          maxLength: 30,
                           decoration: InputDecoration(
                               labelText: "Cari",
+                              counterText: "",
                               contentPadding: const EdgeInsets.all(8),
                               filled: true,
                               fillColor: Colors.white,
@@ -99,7 +106,7 @@ class _ListProductState extends State<ListProduct> {
                           flex: 3,
                           child: Padding(
                             padding:
-                                const EdgeInsets.only(top: 12.0, bottom: 12),
+                                const EdgeInsets.only(top: 20.0, bottom: 20),
                             child: SizedBox(
                                 width: 100,
                                 height: 100,
@@ -133,7 +140,8 @@ class _ListProductState extends State<ListProduct> {
                         itemCode: "A000${index + 1}",
                         itemName: "Produk ${index + 1}",
                         itemPrice: "${(index + 1) * 10000}",
-                        itemStock: index + 1),
+                        itemStock: index + 1,
+                        itemidx: index),
                   );
                 },
               ),
