@@ -1,6 +1,8 @@
 import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/custom_filterFAB.dart';
+import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/components/product_card.dart';
+import 'package:anonymous/components/search.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,6 +25,7 @@ class _ListProductState extends State<ListProduct> {
       backgroundColor: CustomColor().background,
       appBar: const CustomAppBar(title: "Manajemen Product"),
       drawer: const MyDrawer(),
+<<<<<<< HEAD
       body: SingleChildScrollView(
           physics: const ScrollPhysics(),
           child: Column(
@@ -90,19 +93,40 @@ class _ListProductState extends State<ListProduct> {
                 padding:
                     const EdgeInsets.only(left: 25.0, right: 25, bottom: 20),
                 child: ElevatedButton(
+=======
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: SingleChildScrollView(
+            physics: const ScrollPhysics(),
+            child: Column(
+              children: <Widget>[
+                const Search(),
+                SizedBox(height: 12),
+                ElevatedButton(
+>>>>>>> df9465d026824a027460207eea00900943c527a0
                   style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8))),
-                      side: MaterialStateProperty.all(
-                          BorderSide(width: 1, color: CustomColor().secondary)),
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          CustomColor().white)),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    side: MaterialStateProperty.all(
+                      BorderSide(
+                        width: 1,
+                        color: CustomColor().secondary,
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      CustomColor().white,
+                    ),
+                  ),
                   onPressed: () {},
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Expanded(
+<<<<<<< HEAD
                           flex: 3,
                           child: Padding(
                             padding:
@@ -112,41 +136,63 @@ class _ListProductState extends State<ListProduct> {
                                 height: 100,
                                 child: SvgPicture.asset(assetName)),
                           )),
+=======
+                        flex: 3,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 12.0, bottom: 12),
+                          child: SizedBox(
+                            width: 100,
+                            height: 100,
+                            child: SvgPicture.asset(assetName),
+                          ),
+                        ),
+                      ),
+>>>>>>> df9465d026824a027460207eea00900943c527a0
                       Expanded(
                         flex: 4,
                         child: Padding(
-                            padding: const EdgeInsets.only(top: 10, bottom: 8),
-                            child: Text(
-                              "Tambah Produk",
-                              style: TextStyle(
-                                  color: CustomColor().primary,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
-                            )),
+                          padding: const EdgeInsets.only(top: 10, bottom: 8),
+                          child: Text(
+                            "Tambah Produk",
+                            style: TextStyle(
+                              color: CustomColor().primary,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
                 ),
-              ),
-              ListView.builder(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-                itemCount: 10,
-                itemBuilder: (context, int index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 20.0),
-                    child: ProductCard(
+                SizedBox(height: 12),
+                ListView.builder(
+                  itemCount: 10,
+                  shrinkWrap: true,
+                  itemBuilder: (context, int index) {
+                    return Container(
+                      margin: EdgeInsets.only(bottom: 12),
+                      child: ProductCard(
                         itemCode: "A000${index + 1}",
                         itemName: "Produk ${index + 1}",
                         itemPrice: "${(index + 1) * 10000}",
                         itemStock: index + 1,
+<<<<<<< HEAD
                         itemidx: index),
                   );
                 },
               ),
             ],
           )),
+=======
+                      ),
+                    );
+                  },
+                )
+              ],
+            )),
+      ),
+>>>>>>> df9465d026824a027460207eea00900943c527a0
       floatingActionButton: const CustomFAB(),
     );
   }
