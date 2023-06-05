@@ -1,5 +1,6 @@
 import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/drawer.dart';
+import 'package:anonymous/components/search.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 
@@ -48,6 +49,8 @@ class _StaffStoreState extends State<StaffStore>
                 ],
               ),
             ),
+            const Search(),
+            SizedBox(height: 24),
             Expanded(
               child: TabBarView(
                 controller: tabController,
