@@ -7,6 +7,8 @@ import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../components/custom_dialog.dart';
+import '../../components/custom_text_field.dart';
 import '../../components/drawer.dart';
 import '../../components/product_filterBottomSheet.dart';
 
@@ -29,34 +31,61 @@ class _ListCategoryState extends State<ListCategory> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: SingleChildScrollView(
-            physics: const ScrollPhysics(),
-            child: Column(
-              children: <Widget>[
-                const Search(),
-                SizedBox(height: 12),
-                CustomButton(onPressed: () {}, label: 'Tambah Kategori'),
-                SizedBox(height: 12),
-                ListView.builder(
-                  itemCount: 20,
-                  shrinkWrap: true,
-                  itemBuilder: (context, int index) {
-                    return Card(
-                      margin: EdgeInsets.only(bottom: 12),
-                      child: ListTile(
-                        title: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 16,
+          physics: const ScrollPhysics(),
+          child: Column(
+            children: <Widget>[
+              const Search(),
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (_) => CustomDialog(
+                        content: [
+                          CustomTextField(label: "Nama Kategori"),
+                          SizedBox(height: 12),
+                          CustomButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            label: "Tambah Kategori",
                           ),
-                          child: Text('Kategori ${index + 1}'),
-                        ),
-                        onTap: () {},
+                          SizedBox(height: 12),
+                          CustomButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            label: "Kembali",
+                            type: "secondary",
+                          ),
+                        ],
                       ),
                     );
                   },
-                )
-              ],
-            )),
+                  label: 'Tambah Kategori'),
+              SizedBox(height: 12),
+              ListView.builder(
+                itemCount: 20,
+                shrinkWrap: true,
+                itemBuilder: (context, int index) {
+                  return Card(
+                    margin: EdgeInsets.only(bottom: 12),
+                    child: ListTile(
+                      title: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 16,
+                        ),
+                        child: Text('Kategori ${index + 1}'),
+                      ),
+                      onTap: () {},
+                    ),
+                  );
+                },
+              )
+            ],
+          ),
+        ),
       ),
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 24),
