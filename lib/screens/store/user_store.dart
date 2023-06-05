@@ -4,6 +4,8 @@ import 'package:anonymous/components/search.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 
+import '../../components/user_card.dart';
+
 class UserStore extends StatefulWidget {
   const UserStore({super.key});
 
@@ -31,102 +33,8 @@ class _UserStoreState extends State<UserStore> {
                 shrinkWrap: true,
                 itemCount: items.length,
                 itemBuilder: (context, int index) {
-                  return Card(
-                    margin: const EdgeInsets.only(bottom: 12),
-                    child: ListTile(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/store/user/detail');
-                      },
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 12,
-                      ),
-                      title: Text(items[index]),
-                      leading: CircleAvatar(
-                        child: Text(
-                          items[index],
-                          style: TextStyle(fontSize: 10),
-                        ),
-                      ),
-                      trailing: Wrap(
-                        spacing: 6,
-                        children: [
-                          IconButton(
-                            icon: const Icon(
-                              Icons.check,
-                              color: Colors.green,
-                            ),
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (_) => AlertDialog(
-                                  content: Text(
-                                      "Apakah Anda yakin ingin menerima user ini?"),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        "Batal",
-                                        style: TextStyle(
-                                            color: CustomColor().primary),
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        "Terima",
-                                        style: TextStyle(color: Colors.green),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                          ),
-                          IconButton(
-                            icon: const Icon(
-                              Icons.close,
-                              color: Colors.red,
-                            ),
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (_) => AlertDialog(
-                                  content: Text(
-                                      "Apakah Anda yakin ingin menolak user ini?"),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        "Batal",
-                                        style: TextStyle(
-                                            color: CustomColor().primary),
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        "Tolak",
-                                        style: TextStyle(color: Colors.red),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
+                  var item = items[index];
+                  return UserCard(item: item);
                 },
               ),
             ],
