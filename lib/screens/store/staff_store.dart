@@ -1,6 +1,7 @@
 import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/drawer.dart';
 import 'package:anonymous/components/search.dart';
+import 'package:anonymous/components/staff_card.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 
@@ -59,116 +60,16 @@ class _StaffStoreState extends State<StaffStore>
                     shrinkWrap: true,
                     itemCount: items.length,
                     itemBuilder: (context, int index) {
-                      return Card(
-                        margin: const EdgeInsets.only(bottom: 12),
-                        child: ListTile(
-                          onTap: () {
-                            Navigator.pushNamed(context, '/store/staff/detail');
-                          },
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 12,
-                          ),
-                          leading: CircleAvatar(
-                            child: Text(
-                              items[index],
-                              style: TextStyle(fontSize: 10),
-                            ),
-                          ),
-                          title: Text(items[index]),
-                          trailing: IconButton(
-                            icon: const Icon(Icons.archive),
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (_) => AlertDialog(
-                                  content: Text(
-                                      "Apakah Anda yakin ingin mengarsipkannya?"),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        "Batal",
-                                        style: TextStyle(
-                                            color: CustomColor().primary),
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        "Arsipkan",
-                                        style: TextStyle(color: Colors.red),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                      );
+                      var item = items[index];
+                      return StaffCard(item: item, isActive: true);
                     },
                   ),
                   ListView.builder(
                     shrinkWrap: true,
                     itemCount: items.length,
                     itemBuilder: (context, int index) {
-                      return Card(
-                        margin: const EdgeInsets.only(bottom: 12),
-                        child: ListTile(
-                          onTap: () {
-                            Navigator.pushNamed(context, '/store/staff/detail');
-                          },
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 12,
-                          ),
-                          leading: CircleAvatar(
-                            child: Text(
-                              items[index],
-                              style: TextStyle(fontSize: 10),
-                            ),
-                          ),
-                          title: Text(items[index]),
-                          trailing: IconButton(
-                            icon: const Icon(Icons.unarchive),
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (_) => AlertDialog(
-                                  content: Text(
-                                      "Apakah Anda yakin ingin mengaktifkan pegawai?"),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        "Batal",
-                                        style: TextStyle(
-                                            color: CustomColor().primary),
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        "Aktifkan",
-                                        style: TextStyle(color: Colors.green),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                      );
+                      var item = items[index];
+                      return StaffCard(item: item, isActive: false);
                     },
                   ),
                 ],
