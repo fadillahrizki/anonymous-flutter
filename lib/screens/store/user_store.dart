@@ -1,5 +1,6 @@
 import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/drawer.dart';
+import 'package:anonymous/components/search.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 
@@ -24,6 +25,8 @@ class _UserStoreState extends State<UserStore> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              const Search(),
+              SizedBox(height: 24),
               ListView.builder(
                 shrinkWrap: true,
                 itemCount: items.length,
