@@ -31,7 +31,8 @@ class MyDrawer extends StatelessWidget {
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/');
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/', ModalRoute.withName('/'));
             },
           ),
           ListTile(
@@ -40,7 +41,8 @@ class MyDrawer extends StatelessWidget {
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/profile');
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/profile', ModalRoute.withName('/'));
             },
           ),
           ListTile(
@@ -49,7 +51,8 @@ class MyDrawer extends StatelessWidget {
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/store/detail');
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/store/detail', ModalRoute.withName('/'));
             },
           ),
           ListTile(
@@ -58,7 +61,8 @@ class MyDrawer extends StatelessWidget {
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/category');
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/category', ModalRoute.withName('/'));
             },
           ),
           ListTile(
@@ -76,7 +80,8 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/product');
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/product', ModalRoute.withName('/'));
             },
           ),
           ListTile(
@@ -85,7 +90,8 @@ class MyDrawer extends StatelessWidget {
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/store/staff');
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/store/staff', ModalRoute.withName('/'));
             },
           ),
           ListTile(
@@ -94,13 +100,15 @@ class MyDrawer extends StatelessWidget {
             selectedColor: Colors.white,
             selectedTileColor: CustomColor().primary,
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/store/user');
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/store/user', ModalRoute.withName('/'));
             },
           ),
           ListTile(
             title: const Text('Keluar'),
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/login');
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/login', ModalRoute.withName('/'));
             },
           ),
         ],
