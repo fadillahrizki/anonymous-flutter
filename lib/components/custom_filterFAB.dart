@@ -16,24 +16,23 @@ class CustomFAB extends StatelessWidget {
           height: 50,
           child: FittedBox(
             child: FloatingActionButton(
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: BorderSide(width: 1, color: CustomColor().secondary)),
-              onPressed: () {},
-              backgroundColor: CustomColor().white,
-              child: IconButton(
-                  iconSize: 30,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: BorderSide(width: 1, color: CustomColor().secondary)),
+                onPressed: () {
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return const ProductFilterBottomSheet();
+                      });
+                },
+                backgroundColor: CustomColor().white,
+                child: Icon(
+                  Icons.filter_alt_outlined,
                   color: CustomColor().primary,
-                  onPressed: () {
-                    showModalBottomSheet(
-                        context: context,
-                        builder: (context) {
-                          return const ProductFilterBottomSheet();
-                        });
-                  },
-                  icon: const Icon(Icons.filter_alt_outlined)),
-            ),
+                  size: 30,
+                )),
           )),
     );
   }

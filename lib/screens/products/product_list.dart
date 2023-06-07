@@ -22,10 +22,10 @@ class _ListProductState extends State<ListProduct> {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: CustomColor().background,
-      appBar: const CustomAppBar(title: "Manajemen Product"),
+      appBar: const CustomAppBar(title: "Manajemen Produk"),
       drawer: const MyDrawer(),
       body: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: SingleChildScrollView(
             physics: const ScrollPhysics(),
             child: Column(
@@ -49,7 +49,9 @@ class _ListProductState extends State<ListProduct> {
                       CustomColor().white,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/product/add');
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,7 +59,7 @@ class _ListProductState extends State<ListProduct> {
                       Expanded(
                         flex: 3,
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 12.0, bottom: 12),
+                          padding: const EdgeInsets.only(top: 18.0, bottom: 18),
                           child: SizedBox(
                             width: 100,
                             height: 100,
@@ -82,13 +84,13 @@ class _ListProductState extends State<ListProduct> {
                     ],
                   ),
                 ),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 ListView.builder(
                   itemCount: 10,
                   shrinkWrap: true,
                   itemBuilder: (context, int index) {
                     return Container(
-                      margin: EdgeInsets.only(bottom: 12),
+                      margin: const EdgeInsets.only(bottom: 12),
                       child: ProductCard(
                         itemCode: "A000${index + 1}",
                         itemName: "Produk ${index + 1}",

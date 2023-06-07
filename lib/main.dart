@@ -8,6 +8,7 @@ import 'package:anonymous/screens/category/list_category.dart';
 import 'package:anonymous/screens/home.dart';
 import 'package:anonymous/screens/auth/login.dart';
 import 'package:anonymous/screens/auth/register.dart';
+import 'package:anonymous/screens/products/add_product.dart';
 import 'package:anonymous/screens/products/product_list.dart';
 import 'package:anonymous/screens/profile.dart';
 import 'package:anonymous/screens/store/create_store.dart';
@@ -51,7 +52,8 @@ class MainApp extends StatelessWidget {
         '/store/user/detail': (context) => const DetailUser(),
         '/store/user': (context) => const UserStore(),
         '/product': (context) => const ListProduct(),
-        '/category': (context) => const ListCategory()
+        '/category': (context) => const ListCategory(),
+        '/product/add': (context) => const AddProduct()
       },
     );
   }

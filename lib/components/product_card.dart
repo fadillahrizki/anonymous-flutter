@@ -159,10 +159,20 @@ class _ProductCardState extends State<ProductCard> {
                                                 onPressed: () {
                                                   Navigator.pop(context);
                                                   Fluttertoast.showToast(
-                                                      msg:
-                                                          "Produk Telah Dihapus",
-                                                      toastLength:
-                                                          Toast.LENGTH_LONG);
+                                                    msg:
+                                                        "Kode Toko sudah disalin!",
+                                                    toastLength:
+                                                        Toast.LENGTH_SHORT,
+                                                    gravity:
+                                                        ToastGravity.BOTTOM,
+                                                    webBgColor: "#333",
+                                                    webPosition: "center",
+                                                    timeInSecForIosWeb: 2,
+                                                    backgroundColor:
+                                                        CustomColor().primary,
+                                                    textColor: Colors.white,
+                                                    fontSize: 16.0,
+                                                  );
                                                 },
                                                 child: Text(
                                                   "Hapus",

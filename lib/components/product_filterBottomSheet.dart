@@ -5,11 +5,14 @@ class ProductFilterBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Wrap(
       children: [
         Container(
-          decoration:
-              const BoxDecoration(border: Border(bottom: BorderSide(width: 1))),
+          decoration: const BoxDecoration(
+            border: Border(
+              bottom: BorderSide(width: 1),
+            ),
+          ),
           child: const ListTile(
             title: Text(
               "Urutkan Berdasarkan",
@@ -19,8 +22,11 @@ class ProductFilterBottomSheet extends StatelessWidget {
           ),
         ),
         Container(
-          decoration:
-              const BoxDecoration(border: Border(bottom: BorderSide(width: 1))),
+          decoration: const BoxDecoration(
+            border: Border(
+              bottom: BorderSide(width: 1),
+            ),
+          ),
           child: ListTile(
             title: const Text(
               "Nama Produk",
@@ -30,8 +36,11 @@ class ProductFilterBottomSheet extends StatelessWidget {
           ),
         ),
         Container(
-          decoration:
-              const BoxDecoration(border: Border(bottom: BorderSide(width: 1))),
+          decoration: const BoxDecoration(
+            border: Border(
+              bottom: BorderSide(width: 1),
+            ),
+          ),
           child: ListTile(
             title: const Text(
               "Harga",
@@ -41,8 +50,11 @@ class ProductFilterBottomSheet extends StatelessWidget {
           ),
         ),
         Container(
-          decoration:
-              const BoxDecoration(border: Border(bottom: BorderSide(width: 1))),
+          decoration: const BoxDecoration(
+            border: Border(
+              bottom: BorderSide(width: 1),
+            ),
+          ),
           child: ListTile(
             title: const Text(
               "Jumlah Stock",
