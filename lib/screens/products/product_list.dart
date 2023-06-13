@@ -1,5 +1,5 @@
 import 'package:anonymous/components/custom_appBar.dart';
-import 'package:anonymous/components/custom_filterFAB.dart';
+import 'package:anonymous/components/custom_filter_fab.dart';
 import 'package:anonymous/components/product_card.dart';
 import 'package:anonymous/components/search.dart';
 import 'package:anonymous/constants/custom_color.dart';

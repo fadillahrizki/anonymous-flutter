@@ -1,4 +1,4 @@
-import 'package:anonymous/components/product_filterBottomSheet.dart';
+import 'package:anonymous/components/product_filter_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/custom_color.dart';
