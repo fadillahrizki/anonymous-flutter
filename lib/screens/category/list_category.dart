@@ -1,6 +1,6 @@
 import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/custom_button.dart';
-import 'package:anonymous/components/custom_filterFAB.dart';
+import 'package:anonymous/components/custom_filter_fab.dart';
 import 'package:anonymous/components/product_card.dart';
 import 'package:anonymous/components/search.dart';
 import 'package:anonymous/constants/custom_color.dart';
@@ -10,7 +10,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../components/custom_dialog.dart';
 import '../../components/custom_text_field.dart';
 import '../../components/drawer.dart';
-import '../../components/product_filterBottomSheet.dart';
+import '../../components/product_filter_bottom_sheet.dart';
 
 class ListCategory extends StatefulWidget {
   const ListCategory({super.key});

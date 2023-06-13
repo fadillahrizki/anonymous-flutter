@@ -1,5 +1,5 @@
 import 'package:anonymous/components/custom_appBar.dart';
-import 'package:anonymous/components/custom_filterFAB.dart';
+import 'package:anonymous/components/custom_filter_fab.dart';
 import 'package:anonymous/components/product_card.dart';
 import 'package:anonymous/components/search.dart';
 import 'package:anonymous/constants/custom_color.dart';
@@ -91,13 +91,18 @@ class _ListProductState extends State<ListProduct> {
                   itemBuilder: (context, int index) {
                     return Container(
                       margin: const EdgeInsets.only(bottom: 12),
-                      child: ProductCard(
+                      child: InkWell( 
+                        onTap: () {
+                          Navigator.pushNamed(context, '/product/detail');
+                        },
+                      child : ProductCard(
                         itemCode: "A000${index + 1}",
                         itemName: "Produk ${index + 1}",
                         itemPrice: "${(index + 1) * 10000}",
                         itemStock: index + 1,
                         itemidx: index,
                       ),
+                    )
                     );
                   },
                 )
