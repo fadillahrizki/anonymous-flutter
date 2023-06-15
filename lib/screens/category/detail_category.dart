@@ -37,6 +37,14 @@ class _DetailCategoryState extends State<DetailCategory> {
                   onPressed: () {},
                   label: "Simpan Kategori",
                 ),
+                const SizedBox(height: 12),
+                CustomButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  label: "Kembali",
+                  type: 'secondary',
+                ),
                 const SizedBox(height: 24),
                 Text("List Produk"),
                 const SizedBox(height: 24),

@@ -109,8 +109,7 @@ class _ListCategoryState extends State<ListCategory> {
                         },
                       ),
                       onTap: () {
-                        Navigator.pushNamedAndRemoveUntil(
-                            context, '/category/detail', (route) => false);
+                        Navigator.pushNamed(context, '/category/detail');
                       },
                     ),
                   );
