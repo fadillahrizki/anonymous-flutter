@@ -108,7 +108,10 @@ class _ListCategoryState extends State<ListCategory> {
                           );
                         },
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/category/detail', (route) => false);
+                      },
                     ),
                   );
                 },

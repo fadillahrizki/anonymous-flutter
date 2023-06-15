@@ -4,6 +4,7 @@ import 'package:anonymous/providers/product.dart';
 import 'package:anonymous/providers/store.dart';
 import 'package:anonymous/providers/user.dart';
 import 'package:anonymous/screens/auth/otp.dart';
+import 'package:anonymous/screens/category/detail_category.dart';
 import 'package:anonymous/screens/category/list_category.dart';
 import 'package:anonymous/screens/home.dart';
 import 'package:anonymous/screens/auth/login.dart';
@@ -38,6 +39,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Anonymous",
       initialRoute: '/',
       routes: {
         '/': (context) => const Home(),
@@ -54,6 +57,7 @@ class MainApp extends StatelessWidget {
         '/store/user': (context) => const UserStore(),
         '/product': (context) => const ListProduct(),
         '/category': (context) => const ListCategory(),
+        '/category/detail': (context) => const DetailCategory(),
         '/product/add': (context) => const AddProduct(),
         '/product/detail': (context) => const DetailProduct(),
       },
