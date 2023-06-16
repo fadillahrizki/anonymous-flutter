@@ -55,7 +55,8 @@ class StaffCard extends StatelessWidget {
                     },
                     child: Text(
                       isActive ? "Arsipkan" : "Aktifkan",
-                      style: TextStyle(color: Colors.red),
+                      style: TextStyle(
+                          color: isActive ? Colors.red : Colors.green),
                     ),
                   ),
                 ],

@@ -16,6 +16,7 @@ class Search extends StatelessWidget {
           child: TextField(
             cursorColor: CustomColor().primary,
             decoration: InputDecoration(
+              contentPadding: EdgeInsets.all(12),
               filled: true,
               fillColor: CustomColor().white,
               focusedBorder: OutlineInputBorder(
@@ -36,7 +37,6 @@ class Search extends StatelessWidget {
         ),
         SizedBox(width: 12),
         Container(
-          padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(
             color: CustomColor().white,
             shape: BoxShape.rectangle,

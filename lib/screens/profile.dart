@@ -42,17 +42,15 @@ class _ProfileState extends State<Profile> {
       appBar: const CustomAppBar(title: "Profile"),
       drawer: const MyDrawer(active: 'Profile'),
       backgroundColor: CustomColor().background,
-      body: Container(
-        width: MediaQuery.of(context).size.width,
+      body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 100),
                   CircleAvatar(
                     radius: 70,
                     backgroundColor: CustomColor().primary,
@@ -106,6 +104,7 @@ class _ProfileState extends State<Profile> {
                   )
                 ],
               ),
+              SizedBox(height: 24),
               CustomButton(
                 onPressed: () {
                   if (isEditing) {

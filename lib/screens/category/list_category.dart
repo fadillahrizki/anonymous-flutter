@@ -26,41 +26,41 @@ class _ListCategoryState extends State<ListCategory> {
       drawer: const MyDrawer(active: "Manajemen Kategori"),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: SingleChildScrollView(
-          physics: const ScrollPhysics(),
-          child: Column(
-            children: <Widget>[
-              const Search(),
-              SizedBox(height: 12),
-              CustomButton(
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (_) => CustomDialog(
-                        content: [
-                          CustomTextField(label: "Nama Kategori"),
-                          SizedBox(height: 12),
-                          CustomButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            label: "Tambah Kategori",
-                          ),
-                          SizedBox(height: 12),
-                          CustomButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            label: "Kembali",
-                            type: "secondary",
-                          ),
-                        ],
+        child: Column(
+          children: <Widget>[
+            const Search(),
+            SizedBox(height: 12),
+            CustomButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (_) => CustomDialog(
+                    content: [
+                      CustomTextField(label: "Nama Kategori"),
+                      SizedBox(height: 12),
+                      CustomButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        label: "Tambah Kategori",
                       ),
-                    );
-                  },
-                  label: 'Tambah Kategori'),
-              SizedBox(height: 12),
-              ListView.builder(
+                      SizedBox(height: 12),
+                      CustomButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        label: "Kembali",
+                        type: "secondary",
+                      ),
+                    ],
+                  ),
+                );
+              },
+              label: 'Tambah Kategori',
+            ),
+            SizedBox(height: 12),
+            Expanded(
+              child: ListView.builder(
                 itemCount: 20,
                 shrinkWrap: true,
                 itemBuilder: (context, int index) {
@@ -114,9 +114,9 @@ class _ListCategoryState extends State<ListCategory> {
                     ),
                   );
                 },
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
       floatingActionButton: Padding(

@@ -49,10 +49,9 @@ class _DetailStoreState extends State<DetailStore> {
       appBar: const CustomAppBar(title: "Manajemen Toko"),
       drawer: const MyDrawer(active: "Manajemen Toko"),
       backgroundColor: CustomColor().background,
-      body: Container(
-        width: MediaQuery.of(context).size.width,
+      body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

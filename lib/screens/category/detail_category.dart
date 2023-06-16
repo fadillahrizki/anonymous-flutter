@@ -27,49 +27,50 @@ class _DetailCategoryState extends State<DetailCategory> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: SingleChildScrollView(
-            physics: const ScrollPhysics(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                const CustomTextField(label: "Nama Kategori"),
-                const SizedBox(height: 12),
-                CustomButton(
-                  onPressed: () {},
-                  label: "Simpan Kategori",
-                ),
-                const SizedBox(height: 12),
-                CustomButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  label: "Kembali",
-                  type: 'secondary',
-                ),
-                const SizedBox(height: 24),
-                Text("List Produk"),
-                const SizedBox(height: 24),
-                ListView.builder(
-                  itemCount: 10,
-                  shrinkWrap: true,
-                  itemBuilder: (context, int index) {
-                    return Container(
-                        margin: const EdgeInsets.only(bottom: 12),
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(context, '/product/detail');
-                          },
-                          child: ProductCard(
-                            itemCode: "A000${index + 1}",
-                            itemName: "Produk ${index + 1}",
-                            itemPrice: "${(index + 1) * 10000}",
-                            itemStock: index + 1,
-                            itemidx: index,
-                          ),
-                        ));
-                  },
-                )
-              ],
-            )),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const CustomTextField(label: "Nama Kategori"),
+              const SizedBox(height: 12),
+              CustomButton(
+                onPressed: () {},
+                label: "Simpan Kategori",
+              ),
+              const SizedBox(height: 12),
+              CustomButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                label: "Kembali",
+                type: 'secondary',
+              ),
+              const SizedBox(height: 24),
+              Text("List Produk"),
+              const SizedBox(height: 24),
+              ListView.builder(
+                itemCount: 10,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, int index) {
+                  return Container(
+                      margin: const EdgeInsets.only(bottom: 12),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/product/detail');
+                        },
+                        child: ProductCard(
+                          itemCode: "A000${index + 1}",
+                          itemName: "Produk ${index + 1}",
+                          itemPrice: "${(index + 1) * 10000}",
+                          itemStock: index + 1,
+                          itemidx: index,
+                        ),
+                      ));
+                },
+              )
+            ],
+          ),
+        ),
       ),
       floatingActionButton: const CustomFAB(),
     );

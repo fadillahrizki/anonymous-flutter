@@ -9,9 +9,9 @@ class Otp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      backgroundColor: CustomColor().background,
+      body: Padding(
         padding: const EdgeInsets.all(24),
-        color: CustomColor().background,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -25,14 +25,13 @@ class Otp extends StatelessWidget {
               )),
             ),
             const CustomTextField(label: 'OTP'),
-            const SizedBox(height: 32),
+            const SizedBox(height: 24),
             CustomButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/');
               },
               label: 'Verifikasi',
             ),
-            const SizedBox(height: 32),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -46,7 +45,6 @@ class Otp extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 32),
             CustomButton(
               onPressed: () {
                 Navigator.pop(context);

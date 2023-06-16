@@ -15,8 +15,8 @@ class CreateStore extends StatelessWidget {
       drawer: MyDrawer(),
       backgroundColor: CustomColor().background,
       body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(24),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,

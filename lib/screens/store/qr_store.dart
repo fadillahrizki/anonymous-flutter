@@ -19,8 +19,8 @@ class QrStore extends StatelessWidget {
       appBar: CustomAppBar(title: 'QR Code Toko'),
       drawer: MyDrawer(),
       backgroundColor: CustomColor().background,
-      body: Container(
-        padding: const EdgeInsets.all(24),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,

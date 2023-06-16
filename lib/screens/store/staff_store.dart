@@ -23,7 +23,7 @@ class _StaffStoreState extends State<StaffStore>
       appBar: const CustomAppBar(title: 'Manajemen Pegawai'),
       drawer: const MyDrawer(active: 'Manajemen Pegawai'),
       backgroundColor: CustomColor().background,
-      body: Container(
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +31,7 @@ class _StaffStoreState extends State<StaffStore>
           children: [
             Container(
               height: 45,
-              margin: const EdgeInsets.only(bottom: 24, top: 12),
+              margin: const EdgeInsets.symmetric(vertical: 12),
               decoration: BoxDecoration(
                 color: Colors.grey[300],
                 borderRadius: BorderRadius.circular(8),
@@ -51,7 +51,7 @@ class _StaffStoreState extends State<StaffStore>
               ),
             ),
             const Search(),
-            SizedBox(height: 24),
+            SizedBox(height: 12),
             Expanded(
               child: TabBarView(
                 controller: tabController,

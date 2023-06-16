@@ -13,7 +13,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _CustomAppBarState extends State<CustomAppBar> {
-  final String assetName = '../../assets/hamburger.svg';
+  final String assetName = 'assets/hamburger.svg';
   @override
   Widget build(BuildContext context) {
     return AppBar(

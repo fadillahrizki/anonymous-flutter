@@ -9,9 +9,9 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      backgroundColor: CustomColor().background,
+      body: Padding(
         padding: const EdgeInsets.all(24),
-        color: CustomColor().background,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -34,9 +34,9 @@ class Login extends StatelessWidget {
               },
               label: 'Login',
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 24),
             const Center(child: Text('Belum punya akun?')),
-            const SizedBox(height: 32),
+            const SizedBox(height: 24),
             CustomButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/register');

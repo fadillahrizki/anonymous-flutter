@@ -22,14 +22,14 @@ class _UserStoreState extends State<UserStore> {
       appBar: const CustomAppBar(title: 'Konfirmasi User'),
       drawer: const MyDrawer(active: 'Konfirmasi User'),
       backgroundColor: CustomColor().background,
-      body: Container(
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const Search(),
-              SizedBox(height: 24),
-              ListView.builder(
+        child: Column(
+          children: [
+            const Search(),
+            SizedBox(height: 12),
+            Expanded(
+              child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: items.length,
                 itemBuilder: (context, int index) {
@@ -37,8 +37,8 @@ class _UserStoreState extends State<UserStore> {
                   return UserCard(item: item);
                 },
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

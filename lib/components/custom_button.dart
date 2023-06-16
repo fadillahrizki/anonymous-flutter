@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
       return ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: size == 'normal' ? 24 : 12),
+          padding: EdgeInsets.symmetric(vertical: size == 'normal' ? 14 : 10),
           backgroundColor: CustomColor().primary,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
@@ -27,7 +27,7 @@ class CustomButton extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-              fontSize: size == 'normal' ? 16 : 12,
+              fontSize: size == 'normal' ? 14 : 10,
             ),
           ),
         ),
@@ -36,7 +36,7 @@ class CustomButton extends StatelessWidget {
       return OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: size == 'normal' ? 24 : 12),
+          padding: EdgeInsets.symmetric(vertical: size == 'normal' ? 14 : 10),
           side: BorderSide(color: CustomColor().secondary),
           backgroundColor: CustomColor().white,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -46,7 +46,7 @@ class CustomButton extends StatelessWidget {
             label,
             style: TextStyle(
               color: CustomColor().primary,
-              fontSize: size == 'normal' ? 16 : 12,
+              fontSize: size == 'normal' ? 14 : 10,
             ),
           ),
         ),

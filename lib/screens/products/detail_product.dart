@@ -10,10 +10,9 @@ class DetailProduct extends StatefulWidget {
   @override
   State<DetailProduct> createState() => DetailProductState();
 }
-  
 
 class DetailProductState extends State<DetailProduct> {
-  final String assetName = '../../../../assets/produk.png';
+  final String assetName = 'assets/produk.png';
   late TextEditingController nameController,
       stockController,
       priceController,
@@ -41,67 +40,83 @@ class DetailProductState extends State<DetailProduct> {
     categoryController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: "Detail Produk"),
-      drawer: const MyDrawer(),
+      drawer: const MyDrawer(active: "Manajemen Produk"),
       backgroundColor: CustomColor().background,
-      body: Padding(
-        padding: const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 30.0),
-        child: Column(
-        children: [ 
-          Center(
-          child: SizedBox(
-              width: 150,
-              height: 150,
-              child: Image.network(assetName)
-            ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          child: Column(
+            children: [
+              Center(
+                child: SizedBox(
+                  width: 150,
+                  height: 150,
+                  child: Image(
+                    image: AssetImage(assetName),
+                  ),
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Nama Produk',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                  TextField(enabled: isEditing, controller: nameController),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Stock',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                  TextField(enabled: isEditing, controller: stockController),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Harga',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                  TextField(enabled: isEditing, controller: priceController),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Berat',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                  TextField(enabled: isEditing, controller: weightController),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Kategori',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                  TextField(enabled: isEditing, controller: categoryController),
+                  const SizedBox(height: 24),
+                  CustomButton(
+                    onPressed: () {
+                      setState(() {
+                        isEditing = !isEditing;
+                      });
+                    },
+                    label:
+                        isEditing ? "Konfirmasi Perubahan" : "Perbarui Produk",
+                  ),
+                  const SizedBox(height: 12),
+                  CustomButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    label: "Kembali",
+                    type: 'secondary',
+                  ),
+                ],
+              ),
+            ],
           ),
-          Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Nama Produk',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-              ),
-              TextField(enabled: isEditing, controller: nameController),
-              const SizedBox(height: 12),
-              const Text(
-                'Stock',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-              ),
-              TextField(enabled: isEditing, controller: stockController),
-              const SizedBox(height: 12),
-              const Text(
-                'Harga',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-              ),
-              TextField(enabled: isEditing, controller: priceController),
-              const SizedBox(height: 12),
-              const Text(
-                'Berat',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-              ),
-              TextField(enabled: isEditing, controller: weightController),
-              const SizedBox(height: 12),
-              const Text(
-                'Kategori',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-              ),
-              TextField(enabled: isEditing, controller: categoryController),
-              const SizedBox(height: 12),          
-            const SizedBox(height: 8),
-            CustomButton(
-              onPressed: () {
-                setState(() {
-                  isEditing = !isEditing;
-                });
-              },
-              label: isEditing? "Konfirmasi Perubahan" : "Perbarui Produk")
-          ],
-        ),])
+        ),
       ),
     );
   }

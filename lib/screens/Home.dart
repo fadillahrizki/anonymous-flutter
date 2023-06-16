@@ -15,10 +15,9 @@ class Home extends StatelessWidget {
       appBar: CustomAppBar(title: 'Home'),
       drawer: const MyDrawer(),
       backgroundColor: CustomColor().background,
-      body: Container(
-        width: MediaQuery.of(context).size.width,
+      body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
