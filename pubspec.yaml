@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^2.0.5
   fluttertoast: ^8.2.2
   provider: ^6.0.5
   qr_flutter: ^4.1.0

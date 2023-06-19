@@ -5,7 +5,6 @@ import 'package:anonymous/components/product_card.dart';
 import 'package:anonymous/components/search.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../components/drawer.dart';
 
@@ -17,7 +16,7 @@ class ListProduct extends StatefulWidget {
 }
 
 class _ListProductState extends State<ListProduct> {
-  final String assetName = 'assets/add.svg';
+  final String assetName = 'assets/add.png';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

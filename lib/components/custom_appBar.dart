@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import '../constants/custom_color.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -13,7 +12,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _CustomAppBarState extends State<CustomAppBar> {
-  final String assetName = 'assets/hamburger.svg';
+  final String assetName = 'assets/hamburger.png';
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -21,8 +20,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
       toolbarHeight: 100,
       leading: Builder(
         builder: (context) => IconButton(
-            onPressed: () => Scaffold.of(context).openDrawer(),
-            icon: SvgPicture.asset(assetName)),
+          onPressed: () => Scaffold.of(context).openDrawer(),
+          icon: Image(image: AssetImage(assetName)),
+        ),
       ),
       backgroundColor: CustomColor().background,
       shadowColor: Colors.transparent,

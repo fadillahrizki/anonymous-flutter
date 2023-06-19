@@ -4,7 +4,6 @@ import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/components/drawer.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class AddProduct extends StatefulWidget {
@@ -15,7 +14,7 @@ class AddProduct extends StatefulWidget {
 }
 
 class AddProductState extends State<AddProduct> {
-  final String assetName = 'assets/add.svg';
+  final String assetName = 'assets/add.png';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +30,9 @@ class AddProductState extends State<AddProduct> {
               SizedBox(
                 width: 150,
                 height: 150,
-                child: SvgPicture.asset(assetName),
+                child: Image(
+                  image: AssetImage(assetName),
+                ),
               ),
               const CustomTextField(label: "Nama Produk *"),
               const SizedBox(height: 12),
