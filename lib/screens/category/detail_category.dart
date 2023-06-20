@@ -5,8 +5,10 @@ import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/components/product_card.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../components/drawer.dart';
+import '../../providers/product.dart';
 
 class DetailCategory extends StatefulWidget {
   const DetailCategory({super.key});
@@ -19,6 +21,7 @@ class _DetailCategoryState extends State<DetailCategory> {
   final String assetName = '../../../assets/add.svg';
   @override
   Widget build(BuildContext context) {
+    var prov = Provider.of<ProductProvider>(context);
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: CustomColor().background,
@@ -59,10 +62,11 @@ class _DetailCategoryState extends State<DetailCategory> {
                           Navigator.pushNamed(context, '/product/detail');
                         },
                         child: ProductCard(
-                          itemCode: "A000${index + 1}",
-                          itemName: "Produk ${index + 1}",
-                          itemPrice: "${(index + 1) * 10000}",
-                          itemStock: index + 1,
+                          itemCode: prov.products[index]['kode'],
+                          itemName: prov.products[index]['nama'],
+                          itemPrice: prov.products[index]['harga'],
+                          itemStock: prov.products[index]['stock'],
+                          itemImage: prov.products[index]['gambar'],
                           itemidx: index,
                         ),
                       ));

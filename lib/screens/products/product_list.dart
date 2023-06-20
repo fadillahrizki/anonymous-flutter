@@ -4,7 +4,9 @@ import 'package:anonymous/components/custom_filter_fab.dart';
 import 'package:anonymous/components/product_card.dart';
 import 'package:anonymous/components/search.dart';
 import 'package:anonymous/constants/custom_color.dart';
+import 'package:anonymous/providers/product.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../components/drawer.dart';
 
@@ -19,6 +21,7 @@ class _ListProductState extends State<ListProduct> {
   final String assetName = 'assets/add.png';
   @override
   Widget build(BuildContext context) {
+    var prov = Provider.of<ProductProvider>(context);
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: CustomColor().background,
@@ -29,7 +32,7 @@ class _ListProductState extends State<ListProduct> {
         child: Column(
           children: <Widget>[
             const Search(),
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
             CustomButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/product/add');
@@ -39,7 +42,7 @@ class _ListProductState extends State<ListProduct> {
             const SizedBox(height: 12),
             Expanded(
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: prov.products.length,
                 shrinkWrap: true,
                 itemBuilder: (context, int index) {
                   return Container(
@@ -49,10 +52,11 @@ class _ListProductState extends State<ListProduct> {
                           Navigator.pushNamed(context, '/product/detail');
                         },
                         child: ProductCard(
-                          itemCode: "A000${index + 1}",
-                          itemName: "Produk ${index + 1}",
-                          itemPrice: "${(index + 1) * 10000}",
-                          itemStock: index + 1,
+                          itemCode: prov.products[index]['kode'],
+                          itemName: prov.products[index]['nama'],
+                          itemPrice: prov.products[index]['harga'],
+                          itemStock: prov.products[index]['stock'],
+                          itemImage: prov.products[index]['gambar'],
                           itemidx: index,
                         ),
                       ));

@@ -13,8 +13,8 @@ class ProductCard extends StatefulWidget {
     this.itemImage = "",
   });
 
-  final String itemCode, itemName, itemPrice, itemImage;
-  final int itemStock, itemidx;
+  final String itemCode, itemName, itemImage;
+  final int itemStock, itemidx, itemPrice;
   @override
   State<ProductCard> createState() => _ProductCardState();
 }
@@ -36,19 +36,16 @@ class _ProductCardState extends State<ProductCard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-                flex: 2,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 12.0),
-                  child: CircleAvatar(
-                    radius: 50,
-                    backgroundColor: CustomColor().primary,
-                    child: Text(
-                      widget.itemImage,
-                      style:
-                          TextStyle(color: CustomColor().white, fontSize: 12),
-                    ),
-                  ),
-                )),
+              flex: 2,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 12.0),
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage(widget.itemImage),
+                  backgroundColor: Colors.transparent,
+                ),
+              ),
+            ),
             const SizedBox(width: 20),
             Expanded(
               flex: 2,
