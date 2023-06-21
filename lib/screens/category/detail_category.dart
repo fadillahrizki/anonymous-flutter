@@ -33,7 +33,7 @@ class _DetailCategoryState extends State<DetailCategory> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const CustomTextField(label: "Nama Kategori"),
+              CustomTextField(label: "Nama Kategori"),
               const SizedBox(height: 12),
               CustomButton(
                 onPressed: () {},

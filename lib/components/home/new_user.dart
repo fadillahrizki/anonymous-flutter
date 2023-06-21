@@ -9,8 +9,12 @@ class NewUser extends StatelessWidget {
     return TextWithButtons(
       text:
           'Anda belum masuk ke Toko. \nSilahkan Gabung atau Daftar Toko Anda!',
-      onJoin: () {},
-      onRegister: () {},
+      onJoin: () {
+        Navigator.pushNamed(context, '/store/join');
+      },
+      onRegister: () {
+        Navigator.pushNamed(context, '/store/create');
+      },
     );
   }
 }

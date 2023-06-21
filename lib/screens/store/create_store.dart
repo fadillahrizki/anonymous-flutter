@@ -21,16 +21,16 @@ class CreateStore extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CustomTextField(label: 'Nama Toko'),
+              CustomTextField(label: 'Nama Toko'),
               const SizedBox(height: 12),
-              const CustomTextField(label: 'No HP'),
+              CustomTextField(label: 'No HP'),
               const SizedBox(height: 12),
-              const CustomTextField(
+              CustomTextField(
                 label: 'Alamat',
                 maxLines: 6,
               ),
               const SizedBox(height: 12),
-              const CustomTextField(
+              CustomTextField(
                 label: 'Deskripsi',
                 maxLines: 6,
               ),
@@ -40,6 +40,14 @@ class CreateStore extends StatelessWidget {
                   Navigator.pushNamed(context, '/otp');
                 },
                 label: 'Buat Toko',
+              ),
+              const SizedBox(height: 12),
+              CustomButton(
+                type: 'secondary',
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                label: 'Kembali',
               ),
             ],
           ),

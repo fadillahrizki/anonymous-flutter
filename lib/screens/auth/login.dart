@@ -24,9 +24,9 @@ class Login extends StatelessWidget {
                 style: TextStyle(fontSize: 24, color: CustomColor().primary),
               )),
             ),
-            const CustomTextField(label: 'Email'),
+            CustomTextField(label: 'Email'),
             const SizedBox(height: 12),
-            const CustomTextField(label: 'Password', obsecureText: true),
+            CustomTextField(label: 'Password', obsecureText: true),
             const SizedBox(height: 32),
             CustomButton(
               onPressed: () {

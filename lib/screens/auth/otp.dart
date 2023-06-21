@@ -24,7 +24,7 @@ class Otp extends StatelessWidget {
                 style: TextStyle(fontSize: 24, color: CustomColor().primary),
               )),
             ),
-            const CustomTextField(label: 'OTP'),
+            CustomTextField(label: 'OTP'),
             const SizedBox(height: 24),
             CustomButton(
               onPressed: () {

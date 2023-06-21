@@ -17,6 +17,8 @@ import 'package:anonymous/screens/store/create_store.dart';
 import 'package:anonymous/screens/store/detail_staff.dart';
 import 'package:anonymous/screens/store/detail_store.dart';
 import 'package:anonymous/screens/store/detail_user.dart';
+import 'package:anonymous/screens/store/join_store.dart';
+import 'package:anonymous/screens/store/join_store_success.dart';
 import 'package:anonymous/screens/store/qr_store.dart';
 import 'package:anonymous/screens/store/staff_store.dart';
 import 'package:anonymous/screens/store/user_store.dart';
@@ -48,7 +50,9 @@ class MainApp extends StatelessWidget {
         '/login': (context) => const Login(),
         '/otp': (context) => const Otp(),
         '/profile': (context) => const Profile(),
+        '/store/join/success': (context) => JoinStoreSuccess(),
         '/store/create': (context) => const CreateStore(),
+        '/store/join': (context) => const JoinStore(),
         '/store/detail': (context) => const DetailStore(),
         '/store/qr': (context) => const QrStore(),
         '/store/staff/detail': (context) => const DetailStaff(),

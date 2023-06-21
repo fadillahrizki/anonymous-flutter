@@ -25,16 +25,15 @@ class Register extends StatelessWidget {
                   style: TextStyle(fontSize: 24, color: CustomColor().primary),
                 )),
               ),
-              const CustomTextField(label: 'Nama'),
+              CustomTextField(label: 'Nama'),
               const SizedBox(height: 12),
-              const CustomTextField(label: 'Email'),
+              CustomTextField(label: 'Email'),
               const SizedBox(height: 12),
-              const CustomTextField(label: 'No HP'),
+              CustomTextField(label: 'No HP'),
               const SizedBox(height: 12),
-              const CustomTextField(label: 'Password', obsecureText: true),
+              CustomTextField(label: 'Password', obsecureText: true),
               const SizedBox(height: 12),
-              const CustomTextField(
-                  label: 'Konfirmasi Password', obsecureText: true),
+              CustomTextField(label: 'Konfirmasi Password', obsecureText: true),
               const SizedBox(height: 32),
               CustomButton(
                 onPressed: () {
