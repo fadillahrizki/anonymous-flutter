@@ -50,7 +50,7 @@ class MainApp extends StatelessWidget {
         '/login': (context) => const Login(),
         '/otp': (context) => const Otp(),
         '/profile': (context) => const Profile(),
-        '/store/join/success': (context) => JoinStoreSuccess(),
+        '/store/join/success': (context) => const JoinStoreSuccess(),
         '/store/create': (context) => const CreateStore(),
         '/store/join': (context) => const JoinStore(),
         '/store/detail': (context) => const DetailStore(),
