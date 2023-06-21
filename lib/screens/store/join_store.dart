@@ -1,12 +1,7 @@
-import 'dart:io';
-
 import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/custom_button.dart';
-import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/components/drawer.dart';
 import 'package:anonymous/constants/custom_color.dart';
-import 'package:anonymous/screens/store/join_store_success.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
