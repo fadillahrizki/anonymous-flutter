@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:intl/intl.dart';
 import '../constants/custom_color.dart';
 
 class ProductCard extends StatefulWidget {
@@ -114,7 +115,7 @@ class _ProductCardState extends State<ProductCard> {
                     ),
                     SizedBox(height: 6),
                     Text(
-                      'Rp.${widget.itemPrice}',
+                      'Rp.${NumberFormat.decimalPattern().format(widget.itemPrice)}',
                       style: const TextStyle(
                         fontSize: 14,
                       ),
