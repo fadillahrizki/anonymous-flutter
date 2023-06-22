@@ -4,8 +4,11 @@ import 'package:anonymous/components/custom_dialog.dart';
 import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import '../components/drawer.dart';
 import 'package:flutter/material.dart';
+
+import '../providers/user.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -15,32 +18,30 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  late TextEditingController fullnameController,
-      emailController,
-      dateController,
-      phoneController;
+  TextEditingController fullnameController = TextEditingController(),
+      emailController = TextEditingController(),
+      phoneController = TextEditingController();
 
   bool isEditing = false;
-  String? _selectedDate = '18/11/2002';
-
-  @override
-  void initState() {
-    super.initState();
-    fullnameController = TextEditingController(text: 'Rizky Fadillah');
-    emailController = TextEditingController(text: 'fadillahrizki@gmail.com');
-    phoneController = TextEditingController(text: '082222222222');
-  }
+  String? _selectedDate;
 
   @override
   void dispose() {
+    super.dispose();
     fullnameController.dispose();
     emailController.dispose();
     phoneController.dispose();
-    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    var userProvider = Provider.of<UserProvider>(context);
+
+    fullnameController.text = userProvider.userLoggedIn.name;
+    emailController.text = userProvider.userLoggedIn.email;
+    phoneController.text = userProvider.userLoggedIn.phone;
+    _selectedDate = userProvider.userLoggedIn.birthDate;
+
     return Scaffold(
       appBar: const CustomAppBar(title: "Profile"),
       drawer: const MyDrawer(active: 'Profile'),
@@ -58,14 +59,14 @@ class _ProfileState extends State<Profile> {
                     radius: 70,
                     backgroundColor: CustomColor().primary,
                     child: Text(
-                      'Rizky.F',
+                      userProvider.userLoggedIn.name[0],
                       style:
                           TextStyle(color: CustomColor().white, fontSize: 16),
                     ),
                   ),
                   const SizedBox(height: 24),
                   Text(
-                    'Rizky Fadillah',
+                    userProvider.userLoggedIn.name,
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   )
                 ],
@@ -77,19 +78,37 @@ class _ProfileState extends State<Profile> {
                     'Nama Lengkap',
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
-                  TextField(enabled: isEditing, controller: fullnameController),
+                  TextField(
+                    enabled: isEditing,
+                    controller: fullnameController,
+                    onChanged: (val) {
+                      userProvider.userLoggedIn.name = val;
+                    },
+                  ),
                   SizedBox(height: 12),
                   Text(
                     'Email',
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
-                  TextField(enabled: isEditing, controller: emailController),
+                  TextField(
+                    enabled: isEditing,
+                    controller: emailController,
+                    onChanged: (val) {
+                      userProvider.userLoggedIn.email = val;
+                    },
+                  ),
                   SizedBox(height: 12),
                   Text(
                     'No Hp',
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
-                  TextField(enabled: isEditing, controller: phoneController),
+                  TextField(
+                    enabled: isEditing,
+                    controller: phoneController,
+                    onChanged: (val) {
+                      userProvider.userLoggedIn.phone = val;
+                    },
+                  ),
                   SizedBox(height: 12),
                   Text('Tanggal Lahir'),
                   const SizedBox(height: 12),
@@ -107,6 +126,7 @@ class _ProfileState extends State<Profile> {
                         setState(() {
                           _selectedDate =
                               DateFormat('dd/MM/yyyy').format(date!);
+                          userProvider.userLoggedIn.birthDate = _selectedDate!;
                         });
                       });
                     },

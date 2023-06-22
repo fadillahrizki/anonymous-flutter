@@ -2,6 +2,7 @@ import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../components/drawer.dart';
 
@@ -18,6 +19,7 @@ class _DetailUserState extends State<DetailUser> {
       phoneController;
 
   bool isEditing = false;
+  String _selectedDate = "01/01/2003";
 
   @override
   void initState() {
@@ -54,14 +56,14 @@ class _DetailUserState extends State<DetailUser> {
                     radius: 70,
                     backgroundColor: CustomColor().primary,
                     child: Text(
-                      'Rizky.F',
+                      'U',
                       style:
                           TextStyle(color: CustomColor().white, fontSize: 16),
                     ),
                   ),
                   const SizedBox(height: 24),
                   Text(
-                    'Rizky Fadillah',
+                    'User 1',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   )
                 ],
@@ -86,6 +88,15 @@ class _DetailUserState extends State<DetailUser> {
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   TextField(enabled: isEditing, controller: phoneController),
+                  SizedBox(height: 12),
+                  Text('Tanggal Lahir'),
+                  const SizedBox(height: 12),
+                  CustomButton(
+                    enabled: isEditing,
+                    label: _selectedDate,
+                    type: 'secondary',
+                    onPressed: () {},
+                  ),
                   SizedBox(height: 12),
                   Text(
                     'KTP',

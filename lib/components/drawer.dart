@@ -1,4 +1,6 @@
+import 'package:anonymous/providers/user.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../constants/custom_color.dart';
 
@@ -12,15 +14,17 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var userProvider = Provider.of<UserProvider>(context);
+
     return Drawer(
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
-            currentAccountPicture: const CircleAvatar(
-              child: Text("RF"),
+            currentAccountPicture: CircleAvatar(
+              child: Text(userProvider.userLoggedIn.name[0]),
             ),
-            accountName: const Text('Rizky Fadillah'),
-            accountEmail: const Text('fadillahrizki@gmail.com'),
+            accountName: Text(userProvider.userLoggedIn.name),
+            accountEmail: Text(userProvider.userLoggedIn.email),
             decoration: BoxDecoration(
               color: CustomColor().primary,
             ),

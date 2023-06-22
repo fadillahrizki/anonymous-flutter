@@ -18,6 +18,7 @@ class _DetailStaffState extends State<DetailStaff> {
       phoneController;
 
   bool isEditing = false;
+  String _selectedDate = "01/01/2003";
 
   @override
   void initState() {
@@ -54,14 +55,14 @@ class _DetailStaffState extends State<DetailStaff> {
                     radius: 70,
                     backgroundColor: CustomColor().primary,
                     child: Text(
-                      'Rizky.F',
+                      'S',
                       style:
                           TextStyle(color: CustomColor().white, fontSize: 16),
                     ),
                   ),
                   const SizedBox(height: 24),
                   Text(
-                    'Rizky Fadillah',
+                    'Staff 1',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   )
                 ],
@@ -86,6 +87,15 @@ class _DetailStaffState extends State<DetailStaff> {
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   TextField(enabled: isEditing, controller: phoneController),
+                  SizedBox(height: 12),
+                  Text('Tanggal Lahir'),
+                  const SizedBox(height: 12),
+                  CustomButton(
+                    enabled: isEditing,
+                    label: _selectedDate,
+                    type: 'secondary',
+                    onPressed: () {},
+                  ),
                   SizedBox(height: 12),
                   Text(
                     'KTP',
