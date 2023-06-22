@@ -41,7 +41,7 @@ class _DetailUserState extends State<DetailUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: "Detail User"),
-      drawer: const MyDrawer(active: 'Detail User'),
+      drawer: const MyDrawer(active: 'Konfirmasi User'),
       backgroundColor: CustomColor().background,
       body: SingleChildScrollView(
         child: Padding(

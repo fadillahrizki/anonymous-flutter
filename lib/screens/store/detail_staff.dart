@@ -40,7 +40,7 @@ class _DetailStaffState extends State<DetailStaff> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: "Detail Pegawai"),
-      drawer: const MyDrawer(active: 'Detail Pegawai'),
+      drawer: const MyDrawer(active: 'Manajemen Pegawai'),
       backgroundColor: CustomColor().background,
       body: SingleChildScrollView(
         child: Padding(
