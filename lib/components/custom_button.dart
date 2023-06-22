@@ -6,21 +6,24 @@ class CustomButton extends StatelessWidget {
     super.key,
     this.type = 'primary',
     this.size = 'normal',
+    this.enabled = true,
     required this.onPressed,
     required this.label,
   });
 
   final String label, type, size;
   final GestureTapCallback onPressed;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
     if (type == 'primary') {
       return ElevatedButton(
-        onPressed: onPressed,
+        onPressed: enabled ? onPressed : null,
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.symmetric(vertical: size == 'normal' ? 14 : 10),
-          backgroundColor: CustomColor().primary,
+          backgroundColor:
+              enabled ? CustomColor().primary : CustomColor().secondary,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
         child: Center(
@@ -34,11 +37,12 @@ class CustomButton extends StatelessWidget {
       );
     } else {
       return OutlinedButton(
-        onPressed: onPressed,
+        onPressed: enabled ? onPressed : null,
         style: OutlinedButton.styleFrom(
           padding: EdgeInsets.symmetric(vertical: size == 'normal' ? 14 : 10),
           side: BorderSide(color: CustomColor().secondary),
-          backgroundColor: CustomColor().white,
+          backgroundColor:
+              enabled ? CustomColor().white : CustomColor().secondary,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
         child: Center(

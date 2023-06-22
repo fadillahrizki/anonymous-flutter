@@ -9,8 +9,12 @@ class Rejected extends StatelessWidget {
     return TextWithButtons(
       text:
           'Permintaan anda ditolak oleh Pihak Toko.\nSilahkan Gabung atau Daftar Toko Anda!',
-      onJoin: () {},
-      onRegister: () {},
+      onJoin: () {
+        Navigator.pushNamed(context, '/store/join');
+      },
+      onRegister: () {
+        Navigator.pushNamed(context, '/store/create');
+      },
     );
   }
 }

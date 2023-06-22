@@ -45,21 +45,30 @@ class AddProductState extends State<AddProduct> {
               CustomTextField(label: "Kategori Produk"),
               const SizedBox(height: 24),
               CustomButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                    Fluttertoast.showToast(
-                      msg: "Produk Berhasil Ditambahkan!",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                      webBgColor: "#333",
-                      webPosition: "center",
-                      timeInSecForIosWeb: 2,
-                      backgroundColor: CustomColor().primary,
-                      textColor: Colors.white,
-                      fontSize: 16.0,
-                    );
-                  },
-                  label: "Tambah Produk")
+                onPressed: () {
+                  Navigator.pop(context);
+                  Fluttertoast.showToast(
+                    msg: "Produk Berhasil Ditambahkan!",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    webBgColor: "#333",
+                    webPosition: "center",
+                    timeInSecForIosWeb: 2,
+                    backgroundColor: CustomColor().primary,
+                    textColor: Colors.white,
+                    fontSize: 16.0,
+                  );
+                },
+                label: "Tambah Produk",
+              ),
+              const SizedBox(height: 12),
+              CustomButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                label: "Kembali",
+                type: 'secondary',
+              ),
             ],
           ),
         ),

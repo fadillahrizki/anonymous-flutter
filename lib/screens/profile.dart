@@ -3,6 +3,7 @@ import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/components/custom_dialog.dart';
 import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/constants/custom_color.dart';
+import 'package:intl/intl.dart';
 import '../components/drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -16,9 +17,11 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   late TextEditingController fullnameController,
       emailController,
+      dateController,
       phoneController;
 
   bool isEditing = false;
+  String? _selectedDate = '18/11/2002';
 
   @override
   void initState() {
@@ -87,6 +90,27 @@ class _ProfileState extends State<Profile> {
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   TextField(enabled: isEditing, controller: phoneController),
+                  SizedBox(height: 12),
+                  Text('Tanggal Lahir'),
+                  const SizedBox(height: 12),
+                  CustomButton(
+                    enabled: isEditing,
+                    label: _selectedDate ?? 'Pilih Tanggal',
+                    type: 'secondary',
+                    onPressed: () {
+                      showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(2000),
+                        lastDate: DateTime(2099),
+                      ).then((date) {
+                        setState(() {
+                          _selectedDate =
+                              DateFormat('dd/MM/yyyy').format(date!);
+                        });
+                      });
+                    },
+                  ),
                   SizedBox(height: 12),
                   Text(
                     'KTP',
