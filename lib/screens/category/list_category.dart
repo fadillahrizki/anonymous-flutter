@@ -3,6 +3,7 @@ import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/components/search.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../components/custom_dialog.dart';
 import '../../components/custom_text_field.dart';
@@ -97,6 +98,17 @@ class _ListCategoryState extends State<ListCategory> {
                                 TextButton(
                                   onPressed: () {
                                     Navigator.pop(context);
+                                    Fluttertoast.showToast(
+                                      msg: "Kategori berhasil dihapus!",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      gravity: ToastGravity.BOTTOM,
+                                      webBgColor: "#333",
+                                      webPosition: "center",
+                                      timeInSecForIosWeb: 2,
+                                      backgroundColor: CustomColor().primary,
+                                      textColor: Colors.white,
+                                      fontSize: 16.0,
+                                    );
                                   },
                                   child: Text(
                                     "Hapus",
