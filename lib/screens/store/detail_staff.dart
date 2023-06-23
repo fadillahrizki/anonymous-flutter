@@ -23,9 +23,6 @@ class _DetailStaffState extends State<DetailStaff> {
   @override
   void initState() {
     super.initState();
-    fullnameController = TextEditingController(text: 'Staff 1');
-    emailController = TextEditingController(text: 'staff1@gmail.com');
-    phoneController = TextEditingController(text: '082222222222');
   }
 
   @override
@@ -38,6 +35,13 @@ class _DetailStaffState extends State<DetailStaff> {
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as List;
+    var item = args[0] as String;
+    var isActive = args[1] as bool;
+    var email = item.replaceAll(' ', '').toLowerCase();
+    fullnameController = TextEditingController(text: item);
+    emailController = TextEditingController(text: '$email@gmail.com');
+    phoneController = TextEditingController(text: '082222222222');
     return Scaffold(
       appBar: const CustomAppBar(title: "Detail Pegawai"),
       drawer: const MyDrawer(active: 'Manajemen Pegawai'),
@@ -55,14 +59,14 @@ class _DetailStaffState extends State<DetailStaff> {
                     radius: 70,
                     backgroundColor: CustomColor().primary,
                     child: Text(
-                      'S',
+                      args[0],
                       style:
                           TextStyle(color: CustomColor().white, fontSize: 16),
                     ),
                   ),
                   const SizedBox(height: 24),
                   Text(
-                    'Staff 1',
+                    item,
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   )
                 ],
@@ -123,7 +127,7 @@ class _DetailStaffState extends State<DetailStaff> {
                           context: context,
                           builder: (_) => AlertDialog(
                             content: Text(
-                                "Apakah Anda yakin ingin mengarsipkannya?"),
+                                "Apakah Anda yakin ingin ${isActive ? 'mengarsipkannya' : 'mengaktifkannya'}?"),
                             actions: [
                               TextButton(
                                 onPressed: () {
@@ -140,7 +144,7 @@ class _DetailStaffState extends State<DetailStaff> {
                                   Navigator.pop(context);
                                 },
                                 child: Text(
-                                  "Arsipkan",
+                                  isActive ? "Arsipkan" : "Aktifkan",
                                   style: TextStyle(color: Colors.red),
                                 ),
                               ),
@@ -149,7 +153,7 @@ class _DetailStaffState extends State<DetailStaff> {
                         );
                       });
                     },
-                    label: 'Arsipkan',
+                    label: isActive ? 'Arsipkan' : 'Aktifkan',
                   ),
                   SizedBox(height: 12),
                   CustomButton(

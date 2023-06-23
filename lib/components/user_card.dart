@@ -16,7 +16,7 @@ class UserCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       child: ListTile(
         onTap: () {
-          Navigator.pushNamed(context, '/store/user/detail');
+          Navigator.pushNamed(context, '/store/user/detail', arguments: item);
         },
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 20,

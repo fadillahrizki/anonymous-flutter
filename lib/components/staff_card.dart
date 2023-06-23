@@ -18,7 +18,11 @@ class StaffCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       child: ListTile(
         onTap: () {
-          Navigator.pushNamed(context, '/store/staff/detail');
+          Navigator.pushNamed(
+            context,
+            '/store/staff/detail',
+            arguments: [item, isActive],
+          );
         },
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 20,

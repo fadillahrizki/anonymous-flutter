@@ -2,7 +2,6 @@ import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import '../../components/drawer.dart';
 
@@ -24,9 +23,6 @@ class _DetailUserState extends State<DetailUser> {
   @override
   void initState() {
     super.initState();
-    fullnameController = TextEditingController(text: 'User 1');
-    emailController = TextEditingController(text: 'User1@gmail.com');
-    phoneController = TextEditingController(text: '082222222222');
   }
 
   @override
@@ -39,6 +35,13 @@ class _DetailUserState extends State<DetailUser> {
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as String;
+    var email = args.replaceAll(' ', '').toLowerCase();
+
+    fullnameController = TextEditingController(text: args);
+    emailController = TextEditingController(text: '$email@gmail.com');
+    phoneController = TextEditingController(text: '082222222222');
+
     return Scaffold(
       appBar: const CustomAppBar(title: "Detail User"),
       drawer: const MyDrawer(active: 'Konfirmasi User'),
@@ -56,14 +59,14 @@ class _DetailUserState extends State<DetailUser> {
                     radius: 70,
                     backgroundColor: CustomColor().primary,
                     child: Text(
-                      'U',
+                      args[0],
                       style:
                           TextStyle(color: CustomColor().white, fontSize: 16),
                     ),
                   ),
                   const SizedBox(height: 24),
                   Text(
-                    'User 1',
+                    args,
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   )
                 ],
