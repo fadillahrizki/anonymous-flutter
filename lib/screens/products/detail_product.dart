@@ -12,7 +12,8 @@ class DetailProduct extends StatefulWidget {
 }
 
 class DetailProductState extends State<DetailProduct> {
-  final String assetName = 'assets/produk.png';
+  String assetName = 'assets/produk.png';
+
   late TextEditingController nameController,
       stockController,
       priceController,
@@ -24,11 +25,6 @@ class DetailProductState extends State<DetailProduct> {
   @override
   void initState() {
     super.initState();
-    nameController = TextEditingController(text: 'Martil Tanduk Fukung');
-    stockController = TextEditingController(text: '10');
-    priceController = TextEditingController(text: '60000');
-    weightController = TextEditingController(text: '1.5');
-    categoryController = TextEditingController(text: 'Martil');
   }
 
   @override
@@ -43,6 +39,15 @@ class DetailProductState extends State<DetailProduct> {
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as Map;
+
+    nameController = TextEditingController(text: args['nama']);
+    stockController = TextEditingController(text: args['stock'].toString());
+    priceController = TextEditingController(text: args['harga'].toString());
+    weightController = TextEditingController(text: args['berat']);
+    categoryController = TextEditingController(text: args['kategori']);
+    assetName = args['gambar'];
+
     return Scaffold(
       appBar: const CustomAppBar(title: "Detail Produk"),
       drawer: const MyDrawer(active: "Manajemen Produk"),
@@ -52,14 +57,10 @@ class DetailProductState extends State<DetailProduct> {
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Column(
             children: [
-              Center(
-                child: SizedBox(
-                  width: 150,
-                  height: 150,
-                  child: Image(
-                    image: AssetImage(assetName),
-                  ),
-                ),
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage(assetName),
+                backgroundColor: Colors.transparent,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

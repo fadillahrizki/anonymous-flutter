@@ -49,7 +49,11 @@ class _ListProductState extends State<ListProduct> {
                       margin: const EdgeInsets.only(bottom: 12),
                       child: InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/product/detail');
+                          Navigator.pushNamed(
+                            context,
+                            '/product/detail',
+                            arguments: prov.products[index],
+                          );
                         },
                         child: ProductCard(
                           itemCode: prov.products[index]['kode'],
