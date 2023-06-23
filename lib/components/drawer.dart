@@ -40,6 +40,46 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            title: const Text('Home (New User)'),
+            selected: active == 'Home (New User)' ? true : false,
+            selectedColor: Colors.white,
+            selectedTileColor: CustomColor().primary,
+            onTap: () {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/new-user', (route) => false);
+            },
+          ),
+          ListTile(
+            title: const Text('Home (Need KTP)'),
+            selected: active == 'Home (Need KTP)' ? true : false,
+            selectedColor: Colors.white,
+            selectedTileColor: CustomColor().primary,
+            onTap: () {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/need-ktp', (route) => false);
+            },
+          ),
+          ListTile(
+            title: const Text('Home (Rejected)'),
+            selected: active == 'Home (Rejected)' ? true : false,
+            selectedColor: Colors.white,
+            selectedTileColor: CustomColor().primary,
+            onTap: () {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/rejected', (route) => false);
+            },
+          ),
+          ListTile(
+            title: const Text('Home (Waiting Confirm)'),
+            selected: active == 'Home (Waiting Confirm)' ? true : false,
+            selectedColor: Colors.white,
+            selectedTileColor: CustomColor().primary,
+            onTap: () {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/waiting-confirm', (route) => false);
+            },
+          ),
+          ListTile(
             title: const Text('Profile'),
             selected: active == 'Profile' ? true : false,
             selectedColor: Colors.white,
