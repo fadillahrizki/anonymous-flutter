@@ -1,98 +1,111 @@
 import 'package:flutter/material.dart';
 
 class ProductProvider extends ChangeNotifier {
-  final _products = [
-    {
-      "kode": "L0001",
-      "nama": "Lem Fox Kaleng Besar",
-      "harga": 60000,
-      "berat": "150g",
-      "stock": 10,
-      "gambar": "assets/product/lem_fox_kaleng.jpeg",
-      "kategori": "Lem & Perekat"
-    },
-    {
-      "kode": "L0002",
-      "nama": "Lem Kambing Kaleng Kecil",
-      "harga": 12000,
-      "berat": "20g",
-      "stock": 5,
-      "gambar": "assets/product/lem_kambing_kecil.jpeg",
-      "kategori": "Lem & Perekat"
-    },
-    {
-      "kode": "L0003",
-      "nama": "Lem Kambing Odol",
-      "harga": 10000,
-      "berat": "30g",
-      "stock": 20,
-      "gambar": "assets/product/lem_kambing_odol.jpeg",
-      "kategori": "Lem & Perekat"
-    },
-    {
-      "kode": "MT0001",
-      "nama": "Martil Tanduk Fit",
-      "harga": 45000,
-      "berat": "300g",
-      "stock": 10,
-      "gambar": "assets/product/martil_fit.jpg",
-      "kategori": "Martil"
-    },
-    {
-      "kode": "MT0002",
-      "nama": "Martil Tanduk Gagang Fiber SBS",
-      "harga": 35000,
-      "berat": "300g",
-      "stock": 12,
-      "gambar": "assets/product/martil_sbs.jpg",
-      "kategori": "Martil"
-    },
-    {
-      "kode": "MT0003",
-      "nama": "Martil Tanduk Fukung - SBS",
-      "harga": 35000,
-      "berat": "340g",
-      "stock": 6,
-      "gambar": "assets/product/martil_fukung.jpg",
-      "kategori": "Martil"
-    },
-    {
-      "kode": "MT0004",
-      "nama": "Martil Tanduk Senyawa Fit",
-      "harga": 75000,
-      "berat": "400g",
-      "stock": 7,
-      "gambar": "assets/product/martil_fit.jpg",
-      "kategori": "Martil"
-    },
-    {
-      "kode": "MT0005",
-      "nama": "Martil Tanduk Soligen",
-      "harga": 55000,
-      "berat": "380g",
-      "stock": 5,
-      "gambar": "assets/product/martil_soligen.jpg",
-      "kategori": "Martil"
-    },
-    {
-      "kode": "MT0006",
-      "nama": "Martil Tanduk Yahomura",
-      "harga": 50000,
-      "berat": "320g",
-      "stock": 13,
-      "gambar": "assets/product/martil_yahomura.jpg",
-      "kategori": "Martil"
-    },
-    {
-      "kode": "SK0001",
-      "nama": "Stop Kran Onda JF 08 ST",
-      "harga": 90000,
-      "berat": "120g",
-      "stock": 8,
-      "gambar": "assets/product/stop_kran.jpeg",
-      "kategori": "Stop Kran"
-    }
+  List<Product> products = [
+    Product(
+      code: "L0001",
+      name: "Lem Fox Kaleng Besar",
+      price: 60000,
+      weight: "150g",
+      stock: 10,
+      image: "assets/product/lem_fox_kaleng.jpeg",
+      category: "Lem & Perekat",
+    ),
+    Product(
+      code: "L0002",
+      name: "Lem Kambing Kaleng Kecil",
+      price: 12000,
+      weight: "20g",
+      stock: 5,
+      image: "assets/product/lem_kambing_kecil.jpeg",
+      category: "Lem & Perekat",
+    ),
+    Product(
+      code: "L0003",
+      name: "Lem Kambing Odol",
+      price: 10000,
+      weight: "30g",
+      stock: 20,
+      image: "assets/product/lem_kambing_odol.jpeg",
+      category: "Lem & Perekat",
+    ),
+    Product(
+      code: "MT0001",
+      name: "Martil Tanduk Fit",
+      price: 45000,
+      weight: "300g",
+      stock: 10,
+      image: "assets/product/martil_fit.jpg",
+      category: "Martil",
+    ),
+    Product(
+      code: "MT0002",
+      name: "Martil Tanduk Gagang Fiber SBS",
+      price: 35000,
+      weight: "300g",
+      stock: 12,
+      image: "assets/product/martil_sbs.jpg",
+      category: "Martil",
+    ),
+    Product(
+      code: "MT0003",
+      name: "Martil Tanduk Fukung - SBS",
+      price: 35000,
+      weight: "340g",
+      stock: 6,
+      image: "assets/product/martil_fukung.jpg",
+      category: "Martil",
+    ),
+    Product(
+      code: "MT0004",
+      name: "Martil Tanduk Senyawa Fit",
+      price: 75000,
+      weight: "400g",
+      stock: 7,
+      image: "assets/product/martil_fit.jpg",
+      category: "Martil",
+    ),
+    Product(
+      code: "MT0005",
+      name: "Martil Tanduk Soligen",
+      price: 55000,
+      weight: "380g",
+      stock: 5,
+      image: "assets/product/martil_soligen.jpg",
+      category: "Martil",
+    ),
+    Product(
+      code: "MT0006",
+      name: "Martil Tanduk Yahomura",
+      price: 50000,
+      weight: "320g",
+      stock: 13,
+      image: "assets/product/martil_yahomura.jpg",
+      category: "Martil",
+    ),
+    Product(
+      code: "SK0001",
+      name: "Stop Kran Onda JF 08 ST",
+      price: 90000,
+      weight: "120g",
+      stock: 8,
+      image: "assets/product/stop_kran.jpeg",
+      category: "Stop Kran",
+    ),
   ];
+}
 
-  List get products => _products;
+class Product {
+  Product({
+    required this.code,
+    required this.name,
+    required this.weight,
+    required this.category,
+    required this.image,
+    required this.price,
+    required this.stock,
+  });
+
+  String code, name, weight, category, image;
+  double price, stock;
 }

@@ -2,6 +2,7 @@ import 'package:anonymous/components/custom_appBar.dart';
 import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/components/drawer.dart';
 import 'package:anonymous/constants/custom_color.dart';
+import 'package:anonymous/providers/product.dart';
 import 'package:flutter/material.dart';
 
 class DetailProduct extends StatefulWidget {
@@ -39,14 +40,14 @@ class DetailProductState extends State<DetailProduct> {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments as Map;
+    final args = ModalRoute.of(context)!.settings.arguments as Product;
 
-    nameController = TextEditingController(text: args['nama']);
-    stockController = TextEditingController(text: args['stock'].toString());
-    priceController = TextEditingController(text: args['harga'].toString());
-    weightController = TextEditingController(text: args['berat']);
-    categoryController = TextEditingController(text: args['kategori']);
-    assetName = args['gambar'];
+    nameController = TextEditingController(text: args.name);
+    stockController = TextEditingController(text: args.stock.toString());
+    priceController = TextEditingController(text: args.price.toString());
+    weightController = TextEditingController(text: args.weight);
+    categoryController = TextEditingController(text: args.category);
+    assetName = args.image;
 
     return Scaffold(
       appBar: const CustomAppBar(title: "Detail Produk"),

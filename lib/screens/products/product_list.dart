@@ -55,14 +55,7 @@ class _ListProductState extends State<ListProduct> {
                             arguments: prov.products[index],
                           );
                         },
-                        child: ProductCard(
-                          itemCode: prov.products[index]['kode'],
-                          itemName: prov.products[index]['nama'],
-                          itemPrice: prov.products[index]['harga'],
-                          itemStock: prov.products[index]['stock'],
-                          itemImage: prov.products[index]['gambar'],
-                          itemidx: index,
-                        ),
+                        child: ProductCard(product: prov.products[index]),
                       ));
                 },
               ),

@@ -1,3 +1,4 @@
+import 'package:anonymous/providers/product.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
@@ -6,16 +7,10 @@ import '../constants/custom_color.dart';
 class ProductCard extends StatefulWidget {
   ProductCard({
     super.key,
-    required this.itemCode,
-    required this.itemName,
-    required this.itemPrice,
-    required this.itemStock,
-    required this.itemidx,
-    this.itemImage = "",
+    required this.product,
   });
 
-  String itemCode, itemName, itemImage;
-  int itemStock, itemidx, itemPrice;
+  Product product;
   @override
   State<ProductCard> createState() => _ProductCardState();
 }
@@ -65,7 +60,7 @@ class _ProductCardState extends State<ProductCard> {
 
   updateStock(val) {
     setState(() {
-      if (val >= 0) widget.itemStock = val;
+      if (val >= 0) widget.product.stock = val;
     });
   }
 
@@ -87,7 +82,7 @@ class _ProductCardState extends State<ProductCard> {
               flex: 1,
               child: CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage(widget.itemImage),
+                backgroundImage: AssetImage(widget.product.image),
                 backgroundColor: Colors.transparent,
               ),
             ),
@@ -101,7 +96,7 @@ class _ProductCardState extends State<ProductCard> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      widget.itemCode,
+                      widget.product.code,
                       style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
@@ -109,13 +104,13 @@ class _ProductCardState extends State<ProductCard> {
                     ),
                     SizedBox(height: 6),
                     Text(
-                      widget.itemName,
+                      widget.product.name,
                       style: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 6),
                     Text(
-                      'Rp.${NumberFormat.decimalPattern().format(widget.itemPrice)}',
+                      'Rp.${NumberFormat.decimalPattern().format(widget.product.price)}',
                       style: const TextStyle(
                         fontSize: 14,
                       ),
@@ -135,13 +130,13 @@ class _ProductCardState extends State<ProductCard> {
                             ),
                             child: IconButton(
                                 onPressed: () {
-                                  updateStock(widget.itemStock - 1);
+                                  updateStock(widget.product.stock - 1);
                                 },
                                 icon: const Icon(Icons.remove),
                                 iconSize: 18),
                           ),
                           Text(
-                            '${widget.itemStock}',
+                            '${widget.product.stock}',
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -157,7 +152,7 @@ class _ProductCardState extends State<ProductCard> {
                             ),
                             child: IconButton(
                               onPressed: () {
-                                updateStock(widget.itemStock + 1);
+                                updateStock(widget.product.stock + 1);
                               },
                               icon: const Icon(Icons.add),
                               iconSize: 18,
