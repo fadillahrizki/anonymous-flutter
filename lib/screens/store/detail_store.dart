@@ -16,7 +16,6 @@ class DetailStore extends StatefulWidget {
 
 class _DetailStoreState extends State<DetailStore> {
   late TextEditingController fullnameController,
-      emailController,
       addressController,
       descriptionController,
       phoneController;
@@ -26,8 +25,7 @@ class _DetailStoreState extends State<DetailStore> {
   @override
   void initState() {
     super.initState();
-    fullnameController = TextEditingController(text: 'Rizky Fadillah');
-    emailController = TextEditingController(text: 'fadillahrizki@gmail.com');
+    fullnameController = TextEditingController(text: 'Toko A');
     phoneController = TextEditingController(text: '082222222222');
     addressController = TextEditingController(text: 'Medan, Sumatera Utara');
     descriptionController = TextEditingController(text: 'ini deskripsi Toko A');
@@ -36,7 +34,6 @@ class _DetailStoreState extends State<DetailStore> {
   @override
   void dispose() {
     fullnameController.dispose();
-    emailController.dispose();
     phoneController.dispose();
     addressController.dispose();
     descriptionController.dispose();

@@ -18,7 +18,6 @@ class DetailCategory extends StatefulWidget {
 }
 
 class _DetailCategoryState extends State<DetailCategory> {
-  final String assetName = '../../../assets/add.svg';
   @override
   Widget build(BuildContext context) {
     var prov = Provider.of<ProductProvider>(context);
@@ -59,7 +58,11 @@ class _DetailCategoryState extends State<DetailCategory> {
                       margin: const EdgeInsets.only(bottom: 12),
                       child: InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/product/detail');
+                          Navigator.pushNamed(
+                            context,
+                            '/product/detail',
+                            arguments: prov.products[index],
+                          );
                         },
                         child: ProductCard(
                           itemCode: prov.products[index]['kode'],
