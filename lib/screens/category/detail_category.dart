@@ -21,6 +21,7 @@ class _DetailCategoryState extends State<DetailCategory> {
   @override
   Widget build(BuildContext context) {
     var prov = Provider.of<ProductProvider>(context);
+    final args = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: CustomColor().background,
@@ -32,7 +33,10 @@ class _DetailCategoryState extends State<DetailCategory> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              CustomTextField(label: "Nama Kategori"),
+              CustomTextField(
+                label: "Nama Kategori",
+                value: args,
+              ),
               const SizedBox(height: 12),
               CustomButton(
                 onPressed: () {},

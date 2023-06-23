@@ -121,7 +121,8 @@ class _ListCategoryState extends State<ListCategory> {
                         },
                       ),
                       onTap: () {
-                        Navigator.pushNamed(context, '/category/detail');
+                        Navigator.pushNamed(context, '/category/detail',
+                            arguments: 'Kategori 1');
                       },
                     ),
                   );
