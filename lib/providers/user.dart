@@ -7,7 +7,7 @@ class UserProvider extends ChangeNotifier {
       email: "owner@gmail.com",
       phone: "082222222221",
       birthDate: "01/01/2001",
-      password: "password123",
+      password: "owner123",
       role: "owner",
     ),
     User(
@@ -15,7 +15,7 @@ class UserProvider extends ChangeNotifier {
       email: "staff@gmail.com",
       phone: "082222222222",
       birthDate: "01/01/2002",
-      password: "password123",
+      password: "staff123",
       role: "staff",
     ),
     User(
@@ -23,7 +23,7 @@ class UserProvider extends ChangeNotifier {
       email: "newuser@gmail.com",
       phone: "082222222223",
       birthDate: "01/01/2003",
-      password: "password123",
+      password: "newuser123",
       role: "new-user",
     ),
     User(
@@ -31,7 +31,7 @@ class UserProvider extends ChangeNotifier {
       email: "waitingconfirm@gmail.com",
       phone: "082222222224",
       birthDate: "01/01/2004",
-      password: "password123",
+      password: "waiting123",
       role: "waiting-confirm",
     ),
     User(
@@ -39,7 +39,7 @@ class UserProvider extends ChangeNotifier {
       email: "rejected@gmail.com",
       phone: "082222222225",
       birthDate: "01/01/2005",
-      password: "password123",
+      password: "rejected123",
       role: "rejected",
     ),
     User(

@@ -42,7 +42,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Anonymous",
-      initialRoute: '/',
+      initialRoute: '/login',
       routes: {
         '/': (context) => const Home(),
         '/register': (context) => const Register(),

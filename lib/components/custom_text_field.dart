@@ -3,8 +3,8 @@ import 'dart:js_interop';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
+class CustomTextField extends StatefulWidget {
+  CustomTextField({
     super.key,
     this.obsecureText = false,
     this.maxLines = 1,
@@ -14,24 +14,49 @@ class CustomTextField extends StatelessWidget {
 
   final String label;
   final int maxLines;
-  final bool obsecureText;
+  bool obsecureText;
   final TextEditingController? controller;
+
+  @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  bool isPassword = false;
+
+  @override
+  void initState() {
+    isPassword = widget.obsecureText;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label),
+        Text(widget.label),
         const SizedBox(height: 12),
         TextField(
-          controller: controller.isDefinedAndNotNull
-              ? controller
+          controller: widget.controller.isDefinedAndNotNull
+              ? widget.controller
               : TextEditingController(),
-          maxLines: maxLines,
-          obscureText: obsecureText,
+          maxLines: widget.maxLines,
+          obscureText: widget.obsecureText,
           cursorColor: CustomColor().primary,
           decoration: InputDecoration(
+            suffixIcon: Visibility(
+              visible: isPassword,
+              child: IconButton(
+                color: CustomColor().primary,
+                icon: Icon(
+                  widget.obsecureText ? Icons.visibility_off : Icons.visibility,
+                ),
+                onPressed: () => setState(() {
+                  widget.obsecureText = !widget.obsecureText;
+                }),
+              ),
+            ),
             filled: true,
             fillColor: CustomColor().white,
             focusedBorder: OutlineInputBorder(
@@ -46,7 +71,7 @@ class CustomTextField extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(8),
             ),
-            hintText: 'Masukkan $label...',
+            hintText: 'Masukkan ${widget.label}...',
           ),
         ),
       ],
