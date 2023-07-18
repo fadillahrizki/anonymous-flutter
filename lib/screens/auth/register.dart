@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/constants/custom_color.dart';
@@ -98,7 +96,7 @@ class _RegisterState extends State<Register> {
                       (emailController.text.isEmpty) ||
                       (passwordController.text.isEmpty) ||
                       (phoneController.text.isEmpty) ||
-                      (_selectedDate.isNull)) {
+                      (_selectedDate.toString().isEmpty)) {
                     Fluttertoast.showToast(
                       msg: "Mohon mengisi semua formulir!",
                       toastLength: Toast.LENGTH_SHORT,

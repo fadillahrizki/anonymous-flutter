@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 
@@ -38,9 +36,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         Text(widget.label),
         const SizedBox(height: 12),
         TextField(
-          controller: widget.controller.isDefinedAndNotNull
-              ? widget.controller
-              : TextEditingController(),
+          controller: widget.controller ?? TextEditingController(),
           maxLines: widget.maxLines,
           obscureText: widget.obsecureText,
           cursorColor: CustomColor().primary,
