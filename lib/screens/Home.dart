@@ -23,10 +23,6 @@ class Home extends StatelessWidget {
     User userLoggedIn = authProvider.userLoggedIn;
     Widget content = Container();
 
-    if (userLoggedIn.role == "owner") {
-      content = MainHome();
-    } else {}
-
     switch (userLoggedIn.role) {
       case "owner":
         content = MainHome();

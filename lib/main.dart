@@ -1,8 +1,3 @@
-import 'package:anonymous/components/home/main.dart';
-import 'package:anonymous/components/home/need_ktp.dart';
-import 'package:anonymous/components/home/new_user.dart';
-import 'package:anonymous/components/home/rejected.dart';
-import 'package:anonymous/components/home/waiting_confirm.dart';
 import 'package:anonymous/providers/auth.dart';
 import 'package:anonymous/providers/category.dart';
 import 'package:anonymous/providers/product.dart';

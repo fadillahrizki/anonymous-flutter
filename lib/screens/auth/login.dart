@@ -1,5 +1,4 @@
 import 'package:anonymous/components/custom_button.dart';
-import 'package:anonymous/components/custom_dialog.dart';
 import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:anonymous/providers/auth.dart';

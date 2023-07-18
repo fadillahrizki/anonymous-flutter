@@ -9,8 +9,6 @@ import 'package:provider/provider.dart';
 import '../components/drawer.dart';
 import 'package:flutter/material.dart';
 
-import '../providers/user.dart';
-
 class Profile extends StatefulWidget {
   const Profile({super.key});
 
