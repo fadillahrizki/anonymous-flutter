@@ -35,7 +35,7 @@ class _DetailCategoryState extends State<DetailCategory> {
             children: <Widget>[
               CustomTextField(
                 label: "Nama Kategori",
-                value: args,
+                controller: TextEditingController(text: args),
               ),
               const SizedBox(height: 12),
               CustomButton(

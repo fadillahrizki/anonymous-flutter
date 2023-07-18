@@ -1,33 +1,33 @@
+import 'dart:js_interop';
+
 import 'package:anonymous/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField({
+  const CustomTextField({
     super.key,
     this.obsecureText = false,
     this.maxLines = 1,
     required this.label,
-    this.value = '',
+    this.controller,
   });
 
   final String label;
   final int maxLines;
   final bool obsecureText;
-
-  String value;
-  TextEditingController controller = TextEditingController();
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
-    controller.text = value;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(label),
         const SizedBox(height: 12),
         TextField(
-          controller: controller,
+          controller: controller.isDefinedAndNotNull
+              ? controller
+              : TextEditingController(),
           maxLines: maxLines,
           obscureText: obsecureText,
           cursorColor: CustomColor().primary,

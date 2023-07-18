@@ -3,6 +3,7 @@ import 'package:anonymous/components/custom_button.dart';
 import 'package:anonymous/components/custom_dialog.dart';
 import 'package:anonymous/components/custom_text_field.dart';
 import 'package:anonymous/constants/custom_color.dart';
+import 'package:anonymous/providers/auth.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../components/drawer.dart';
@@ -35,12 +36,12 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
-    var userProvider = Provider.of<UserProvider>(context);
+    var authProvider = Provider.of<AuthProvider>(context);
 
-    fullnameController.text = userProvider.userLoggedIn.name;
-    emailController.text = userProvider.userLoggedIn.email;
-    phoneController.text = userProvider.userLoggedIn.phone;
-    _selectedDate = userProvider.userLoggedIn.birthDate;
+    fullnameController.text = authProvider.userLoggedIn.name;
+    emailController.text = authProvider.userLoggedIn.email;
+    phoneController.text = authProvider.userLoggedIn.phone;
+    _selectedDate = authProvider.userLoggedIn.birthDate;
 
     return Scaffold(
       appBar: const CustomAppBar(title: "Profile"),
@@ -59,14 +60,14 @@ class _ProfileState extends State<Profile> {
                     radius: 70,
                     backgroundColor: CustomColor().primary,
                     child: Text(
-                      userProvider.userLoggedIn.name[0],
+                      authProvider.userLoggedIn.name[0],
                       style:
                           TextStyle(color: CustomColor().white, fontSize: 16),
                     ),
                   ),
                   const SizedBox(height: 24),
                   Text(
-                    userProvider.userLoggedIn.name,
+                    authProvider.userLoggedIn.name,
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   )
                 ],
@@ -82,7 +83,7 @@ class _ProfileState extends State<Profile> {
                     enabled: isEditing,
                     controller: fullnameController,
                     onChanged: (val) {
-                      userProvider.userLoggedIn.name = val;
+                      authProvider.userLoggedIn.name = val;
                     },
                   ),
                   SizedBox(height: 12),
@@ -94,7 +95,7 @@ class _ProfileState extends State<Profile> {
                     enabled: isEditing,
                     controller: emailController,
                     onChanged: (val) {
-                      userProvider.userLoggedIn.email = val;
+                      authProvider.userLoggedIn.email = val;
                     },
                   ),
                   SizedBox(height: 12),
@@ -106,7 +107,7 @@ class _ProfileState extends State<Profile> {
                     enabled: isEditing,
                     controller: phoneController,
                     onChanged: (val) {
-                      userProvider.userLoggedIn.phone = val;
+                      authProvider.userLoggedIn.phone = val;
                     },
                   ),
                   SizedBox(height: 12),
@@ -126,7 +127,7 @@ class _ProfileState extends State<Profile> {
                         setState(() {
                           _selectedDate =
                               DateFormat('dd/MM/yyyy').format(date!);
-                          userProvider.userLoggedIn.birthDate = _selectedDate!;
+                          authProvider.userLoggedIn.birthDate = _selectedDate!;
                         });
                       });
                     },

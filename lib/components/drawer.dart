@@ -1,3 +1,4 @@
+import 'package:anonymous/providers/auth.dart';
 import 'package:anonymous/providers/user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,17 +15,17 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var userProvider = Provider.of<UserProvider>(context);
+    var authProvider = Provider.of<AuthProvider>(context);
 
     return Drawer(
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(
-              child: Text(userProvider.userLoggedIn.name[0]),
+              child: Text(authProvider.userLoggedIn.name[0]),
             ),
-            accountName: Text(userProvider.userLoggedIn.name),
-            accountEmail: Text(userProvider.userLoggedIn.email),
+            accountName: Text(authProvider.userLoggedIn.name),
+            accountEmail: Text(authProvider.userLoggedIn.email),
             decoration: BoxDecoration(
               color: CustomColor().primary,
             ),
@@ -37,46 +38,6 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pushNamedAndRemoveUntil(
                   context, '/', ModalRoute.withName('/'));
-            },
-          ),
-          ListTile(
-            title: const Text('Home (New User)'),
-            selected: active == 'Home (New User)' ? true : false,
-            selectedColor: Colors.white,
-            selectedTileColor: CustomColor().primary,
-            onTap: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/new-user', (route) => false);
-            },
-          ),
-          ListTile(
-            title: const Text('Home (Need KTP)'),
-            selected: active == 'Home (Need KTP)' ? true : false,
-            selectedColor: Colors.white,
-            selectedTileColor: CustomColor().primary,
-            onTap: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/need-ktp', (route) => false);
-            },
-          ),
-          ListTile(
-            title: const Text('Home (Rejected)'),
-            selected: active == 'Home (Rejected)' ? true : false,
-            selectedColor: Colors.white,
-            selectedTileColor: CustomColor().primary,
-            onTap: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/rejected', (route) => false);
-            },
-          ),
-          ListTile(
-            title: const Text('Home (Waiting Confirm)'),
-            selected: active == 'Home (Waiting Confirm)' ? true : false,
-            selectedColor: Colors.white,
-            selectedTileColor: CustomColor().primary,
-            onTap: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/waiting-confirm', (route) => false);
             },
           ),
           ListTile(

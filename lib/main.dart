@@ -32,11 +32,10 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (_) => AuthProvider()),
+    ChangeNotifierProvider(create: (_) => AuthProvider(UserProvider())),
     ChangeNotifierProvider(create: (_) => ProductProvider()),
     ChangeNotifierProvider(create: (_) => CategoryProvider()),
     ChangeNotifierProvider(create: (_) => StoreProvider()),
-    ChangeNotifierProvider(create: (_) => UserProvider()),
   ], child: const MainApp()));
 }
 
@@ -50,26 +49,7 @@ class MainApp extends StatelessWidget {
       title: "Anonymous",
       initialRoute: '/',
       routes: {
-        '/': (context) => const Home(
-              content: MainHome(),
-              title: 'Home',
-            ),
-        '/new-user': (context) => const Home(
-              content: NewUser(),
-              title: 'Home (New User)',
-            ),
-        '/need-ktp': (context) => const Home(
-              content: NeedKtp(),
-              title: 'Home (Need KTP)',
-            ),
-        '/rejected': (context) => const Home(
-              content: Rejected(),
-              title: 'Home (Rejected)',
-            ),
-        '/waiting-confirm': (context) => const Home(
-              content: WaitingConfirm(),
-              title: 'Home (Waiting Confirm)',
-            ),
+        '/': (context) => const Home(),
         '/register': (context) => const Register(),
         '/login': (context) => const Login(),
         '/otp': (context) => const Otp(),
